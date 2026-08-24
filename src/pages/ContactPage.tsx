@@ -96,7 +96,7 @@ export const ContactPage: React.FC = () => {
                   <Linkedin className="w-4 h-4 text-cyan-400" />
                   <div>
                     <span className="text-[10px] font-mono text-slate-400 uppercase">LinkedIn Profile</span>
-                    <p className="text-xs font-mono text-slate-200 group-hover:text-primary-300">linkedin.com/in/modibhavya</p>
+                    <p className="text-xs font-mono text-slate-200 group-hover:text-primary-300">linkedin.com/in/bhavya-modi-9a9b28312</p>
                   </div>
                 </div>
                 <span className="text-xs text-slate-400 group-hover:text-white">&rarr;</span>
@@ -113,7 +113,7 @@ export const ContactPage: React.FC = () => {
                   <Github className="w-4 h-4 text-slate-200" />
                   <div>
                     <span className="text-[10px] font-mono text-slate-400 uppercase">GitHub Activity</span>
-                    <p className="text-xs font-mono text-slate-200 group-hover:text-primary-300">github.com/modibhavya</p>
+                    <p className="text-xs font-mono text-slate-200 group-hover:text-primary-300">github.com/bhavya277</p>
                   </div>
                 </div>
                 <span className="text-xs text-slate-400 group-hover:text-white">&rarr;</span>

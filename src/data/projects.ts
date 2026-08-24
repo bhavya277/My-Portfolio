@@ -10,7 +10,7 @@ export const projectsData: ProjectCaseStudy[] = [
     role: 'Lead Full-Stack & AI Systems Developer',
     duration: '2 Months',
     teamSize: 'Individual / Capstone',
-    githubUrl: 'https://github.com/modibhavya/globetrotter',
+    githubUrl: 'https://github.com/bhavya277/globetrotter',
     liveUrl: 'https://globetrotter-demo.vercel.app',
     tags: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Generative AI', 'Tailwind CSS', 'REST API'],
     
@@ -104,8 +104,8 @@ export const projectsData: ProjectCaseStudy[] = [
     role: 'ML & NLP Engineer',
     duration: '1 Month',
     teamSize: 'Individual',
-    githubUrl: 'https://github.com/modibhavya/nlp-sentiment-pipeline',
-    liveUrl: 'https://github.com/modibhavya/nlp-sentiment-pipeline',
+    githubUrl: 'https://github.com/bhavya277/nlp-sentiment-pipeline',
+    liveUrl: 'https://github.com/bhavya277/nlp-sentiment-pipeline',
     tags: ['Python', 'NLP', 'Scikit-learn', 'TF-IDF', 'PyTorch', 'Hugging Face', 'FastAPI'],
     
     problem: 'Standard rule-based sentiment models fail when processing text containing sarcasm, domain slang, or nuanced subjectivity across diverse customer reviews.',
@@ -188,8 +188,8 @@ export const projectsData: ProjectCaseStudy[] = [
     role: 'Security & ML Developer',
     duration: '1 Month',
     teamSize: 'Academic / Lab Project',
-    githubUrl: 'https://github.com/modibhavya/network-threat-detector',
-    liveUrl: 'https://github.com/modibhavya/network-threat-detector',
+    githubUrl: 'https://github.com/bhavya277/network-threat-detector',
+    liveUrl: 'https://github.com/bhavya277/network-threat-detector',
     tags: ['Python', 'Cybersecurity', 'Random Forest', 'Scikit-learn', 'Pandas', 'Network Security'],
     
     problem: 'Traditional signature-based intrusion detection systems (IDS) struggle to detect zero-day anomalies and polymorphic network attacks.',
@@ -257,7 +257,7 @@ export const projectsData: ProjectCaseStudy[] = [
     role: 'Data Science Developer',
     duration: '3 Weeks',
     teamSize: 'Individual',
-    githubUrl: 'https://github.com/modibhavya/data-insight-framework',
+    githubUrl: 'https://github.com/bhavya277/data-insight-framework',
     tags: ['Python', 'Data Science', 'Pandas', 'Seaborn', 'Matplotlib', 'Streamlit'],
     
     problem: 'Manual exploratory data analysis for new tabular datasets is repetitive and often overlooks subtle outliers and correlation anomalies.',

@@ -13,7 +13,7 @@ export const ProofOfWork: React.FC = () => {
       evidence: 'Supervised classification pipelines, statistical feature selection, cross-validation, and metric benchmarking.',
       projectTitle: 'NLP Sentiment & Classification Pipeline',
       projectUrl: '/projects/nlp-sentiment-analyzer',
-      githubUrl: 'https://github.com/modibhavya/nlp-sentiment-pipeline',
+      githubUrl: 'https://github.com/bhavya277/nlp-sentiment-pipeline',
       deliverables: ['TF-IDF + SVM baseline vs DistilBERT Transformer', 'Quantized CPU inference <35ms', 'FastAPI microservice'],
     },
     {
@@ -22,7 +22,7 @@ export const ProofOfWork: React.FC = () => {
       evidence: 'End-to-end full-stack architectures, relational data modeling in PostgreSQL, authentication, and REST APIs.',
       projectTitle: 'GlobeTrotter — AI Travel Platform',
       projectUrl: '/projects/globetrotter',
-      githubUrl: 'https://github.com/modibhavya/globetrotter',
+      githubUrl: 'https://github.com/bhavya277/globetrotter',
       deliverables: ['Relational schema with Prisma ORM', 'Structured LLM prompt JSON validation', 'JWT auth & responsive UI'],
     },
     {
@@ -31,7 +31,7 @@ export const ProofOfWork: React.FC = () => {
       evidence: 'Network flow analysis, behavioral anomaly classification, and secure cryptography implementation.',
       projectTitle: 'Network Threat & Intrusion Detector',
       projectUrl: '/projects/secure-threat-detector',
-      githubUrl: 'https://github.com/modibhavya/network-threat-detector',
+      githubUrl: 'https://github.com/bhavya277/network-threat-detector',
       deliverables: ['Random Forest packet classification (96.8% Acc)', 'Multicollinearity reduction', 'Terminal threat scoring CLI'],
     },
     {
@@ -40,7 +40,7 @@ export const ProofOfWork: React.FC = () => {
       evidence: 'Vectorized tabular processing, automated distribution profiling, and bivariate hypothesis testing.',
       projectTitle: 'Statistical Data Analytics Framework',
       projectUrl: '/projects/data-insight-dashboard',
-      githubUrl: 'https://github.com/modibhavya/data-insight-framework',
+      githubUrl: 'https://github.com/bhavya277/data-insight-framework',
       deliverables: ['Automated missing-value & outlier detection', 'Plotly interactive visualizations', 'Streamlit analytics UI'],
     },
   ];

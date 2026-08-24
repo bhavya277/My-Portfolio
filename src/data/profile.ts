@@ -3,16 +3,16 @@ import { ProfileData } from '../types';
 export const profileData: ProfileData = {
   name: 'Bhavya Modi',
   title: 'B.Tech IT Student',
-  subtitle: 'AI/ML • Data Science • Software Engineering',
+  subtitle: 'AI/ML • Data Science',
   bioHeadline: 'Building intelligent, data-driven systems at the intersection of machine learning, software engineering, and cybersecurity.',
   shortBio: 'Pre-final year Information Technology undergraduate focused on developing production-grade machine learning models, end-to-end AI applications, and robust web systems. Passionate about solving real-world challenges through clean engineering, continuous experimentation, and empirical evaluation.',
   location: 'India',
-  email: 'modibhavya@example.com',
+  email: 'modibhavya128@gmail.com',
   resumeUrl: '/resume.pdf',
   socials: {
-    github: 'https://github.com/modibhavya',
-    linkedin: 'https://linkedin.com/in/modibhavya',
-    email: 'mailto:modibhavya@example.com',
+    github: 'https://github.com/bhavya277',
+    linkedin: 'https://www.linkedin.com/in/bhavya-modi-9a9b28312',
+    email: 'mailto:modibhavya128@gmail.com',
   },
   currently: {
     building: 'AI/ML applications & full-stack platforms (GlobeTrotter)',

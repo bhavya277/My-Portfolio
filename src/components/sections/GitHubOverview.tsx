@@ -6,7 +6,7 @@ import { Card } from '../ui/Card';
 import { SectionHeader } from '../ui/SectionHeader';
 
 export const GitHubOverview: React.FC = () => {
-  const { topRepos, languages, isError } = useGitHubData('modibhavya');
+  const { topRepos, languages, isError } = useGitHubData('bhavya277');
 
   return (
     <section className="py-16 md:py-24 border-b border-border-dark">
@@ -25,7 +25,7 @@ export const GitHubOverview: React.FC = () => {
             className="mt-4 md:mt-0 inline-flex items-center gap-2 text-xs font-mono text-slate-300 hover:text-white bg-slate-900 border border-slate-800 px-3.5 py-2 rounded-lg hover:border-slate-700 transition-colors"
           >
             <Github className="w-4 h-4" />
-            <span>github.com/modibhavya</span>
+            <span>github.com/bhavya277</span>
             <ExternalLink className="w-3 h-3 text-slate-400" />
           </a>
         </div>

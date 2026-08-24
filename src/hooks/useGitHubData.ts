@@ -27,7 +27,7 @@ const FALLBACK_REPOS: GitHubRepo[] = [
     id: 1,
     name: 'globetrotter',
     description: 'Full-stack AI-assisted travel discovery & itinerary planning platform with interactive geospatial maps and PostgreSQL storage.',
-    html_url: 'https://github.com/modibhavya/globetrotter',
+    html_url: 'https://github.com/bhavya277/globetrotter',
     stargazers_count: 14,
     forks_count: 3,
     language: 'TypeScript',
@@ -38,7 +38,7 @@ const FALLBACK_REPOS: GitHubRepo[] = [
     id: 2,
     name: 'nlp-sentiment-pipeline',
     description: 'Comparative NLP text sentiment pipeline: TF-IDF + Classical ML vs DistilBERT Transformer fine-tuning with FastAPI serving.',
-    html_url: 'https://github.com/modibhavya/nlp-sentiment-pipeline',
+    html_url: 'https://github.com/bhavya277/nlp-sentiment-pipeline',
     stargazers_count: 8,
     forks_count: 2,
     language: 'Python',
@@ -49,7 +49,7 @@ const FALLBACK_REPOS: GitHubRepo[] = [
     id: 3,
     name: 'network-threat-detector',
     description: 'Anomaly-based network intrusion detection system evaluating random forest & decision tree classifiers on flow packets.',
-    html_url: 'https://github.com/modibhavya/network-threat-detector',
+    html_url: 'https://github.com/bhavya277/network-threat-detector',
     stargazers_count: 6,
     forks_count: 1,
     language: 'Python',
@@ -60,7 +60,7 @@ const FALLBACK_REPOS: GitHubRepo[] = [
     id: 4,
     name: 'data-insight-framework',
     description: 'Automated exploratory data analysis platform generating statistical distributions, correlation heatmaps, and outlier reports.',
-    html_url: 'https://github.com/modibhavya/data-insight-framework',
+    html_url: 'https://github.com/bhavya277/data-insight-framework',
     stargazers_count: 5,
     forks_count: 1,
     language: 'Python',
@@ -76,7 +76,7 @@ const FALLBACK_LANGUAGES = [
   { name: 'C++', percentage: 8, color: '#F34B7D' },
 ];
 
-export const useGitHubData = (username: string = 'modibhavya'): GitHubProfileStats => {
+export const useGitHubData = (username: string = 'bhavya277'): GitHubProfileStats => {
   const [data, setData] = useState<GitHubProfileStats>({
     public_repos: 18,
     followers: 12,

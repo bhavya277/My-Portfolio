@@ -12,7 +12,7 @@ export const hackathonsData: HackathonItem[] = [
     myRole: 'ML Model Development & Backend API Integration',
     techStack: ['Python', 'FastAPI', 'Scikit-learn', 'NLP', 'React', 'PostgreSQL'],
     outcome: 'Finalist / Top 5 Team in Institutional Round',
-    repoUrl: 'https://github.com/modibhavya/smart-grievance-ai',
+    repoUrl: 'https://github.com/bhavya277/smart-grievance-ai',
     learnings: [
       'Rapid prototype development under a strict 36-hour sprint timeframe.',
       'Translating ambiguous problem statements into discrete ML classification tasks.',
@@ -30,7 +30,7 @@ export const hackathonsData: HackathonItem[] = [
     myRole: 'Frontend & Client-Side Encryption Logic',
     techStack: ['React', 'Web Crypto API', 'Node.js', 'Express', 'Tailwind CSS'],
     outcome: '2nd Place — Best Security Implementation',
-    repoUrl: 'https://github.com/modibhavya/secure-datavault',
+    repoUrl: 'https://github.com/bhavya277/secure-datavault',
     learnings: [
       'Practical implementation of Web Crypto API (SubtleCrypto) in modern browsers.',
       'Managing encrypted binary blobs and secure key derivation functions (PBKDF2).',
