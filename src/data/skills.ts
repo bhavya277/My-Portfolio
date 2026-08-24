@@ -1,173 +1,212 @@
-import { SkillItem } from '../types';
+import { SkillItem, AreaExploring, LearningMilestone } from '../types';
 
 export const skillsData: SkillItem[] = [
-  // CORE SKILLS
+  // Languages & Core Programming
+  {
+    name: 'TypeScript',
+    category: 'Languages',
+    level: 'core',
+    proofOfWorkProjectIds: ['krishi-bazar', 'globetrotter', 'hrms-th', 'assetflow'],
+    topics: ['Interfaces & Type Guards', 'Generics', 'Full-Stack Integration', 'Strict Type Checking'],
+  },
   {
     name: 'Python',
     category: 'Languages',
     level: 'core',
-    proofOfWorkProjectIds: ['globetrotter', 'nlp-sentiment-analyzer', 'secure-threat-detector'],
-    topics: ['OOP', 'NumPy', 'Pandas', 'Asynchronous programming', 'Scripting', 'API integrations'],
+    proofOfWorkProjectIds: ['finops', 'assetflow', 'secure-vote'],
+    topics: ['Data Analysis (Pandas/NumPy)', 'Machine Learning', 'FastAPI & Flask APIs', 'Automation Scripting'],
   },
   {
-    name: 'SQL & Database Systems',
-    category: 'Databases & Tools',
-    level: 'core',
-    proofOfWorkProjectIds: ['globetrotter'],
-    topics: ['PostgreSQL', 'Relational schema design', 'Query optimization', 'Indexing', 'Transactions'],
-  },
-  {
-    name: 'Data Structures & Algorithms',
+    name: 'JavaScript (ES6+)',
     category: 'Languages',
     level: 'core',
-    proofOfWorkProjectIds: ['globetrotter', 'nlp-sentiment-analyzer'],
-    topics: ['Arrays & HashMaps', 'Trees & Graphs', 'Dynamic Programming', 'Complexity analysis (O(N))'],
+    proofOfWorkProjectIds: ['particle-tracking', 'expense-manager', 'globetrotter'],
+    topics: ['Async/Await & Promises', 'DOM Manipulation', 'Event Loop', 'WebGL/Three.js APIs'],
+  },
+  {
+    name: 'SQL',
+    category: 'Databases & Tools',
+    level: 'core',
+    proofOfWorkProjectIds: ['globetrotter', 'expense-manager', 'assetflow'],
+    topics: ['Relational Schema Design', 'Complex Joins', 'Aggregations', 'Indexes & Integrity'],
+  },
+  {
+    name: 'Solidity',
+    category: 'Systems & Security',
+    level: 'working-with',
+    proofOfWorkProjectIds: ['secure-vote'],
+    topics: ['Smart Contracts', 'EVM Execution', 'OpenZeppelin Standards', 'Hardhat Testing'],
+  },
+  {
+    name: 'PHP',
+    category: 'Languages',
+    level: 'working-with',
+    proofOfWorkProjectIds: ['expense-manager'],
+    topics: ['Server-Side Scripting', 'Session Management', 'PDO Prepared Statements', 'CRUD Logic'],
+  },
+
+  // Frontend & UI Engineering
+  {
+    name: 'React',
+    category: 'Web & Backend',
+    level: 'core',
+    proofOfWorkProjectIds: ['krishi-bazar', 'globetrotter', 'hrms-th', 'finops', 'assetflow'],
+    topics: ['Hooks & State Management', 'Component Architecture', 'Client-Side Routing', 'Performance Optimization'],
+  },
+  {
+    name: 'Tailwind CSS',
+    category: 'Web & Backend',
+    level: 'core',
+    proofOfWorkProjectIds: ['krishi-bazar', 'globetrotter', 'hrms-th', 'assetflow'],
+    topics: ['Responsive Layouts', 'Custom Design Tokens', 'Utility Patterns', 'Dark Mode Styling'],
+  },
+  {
+    name: 'Three.js & WebGL',
+    category: 'AI & Machine Learning',
+    level: 'working-with',
+    proofOfWorkProjectIds: ['particle-tracking'],
+    topics: ['3D Scene & Camera Setup', 'Particle Buffer Geometries', 'Real-Time Morphing', 'Frame Render Loops'],
+  },
+  {
+    name: 'Chart.js & Recharts',
+    category: 'Web & Backend',
+    level: 'working-with',
+    proofOfWorkProjectIds: ['krishi-bazar', 'hrms-th', 'expense-manager'],
+    topics: ['Financial Telemetry Charts', 'Time-Series Visualizations', 'Dynamic Data Binding'],
+  },
+
+  // Backend, Databases & APIs
+  {
+    name: 'Node.js & Express',
+    category: 'Web & Backend',
+    level: 'core',
+    proofOfWorkProjectIds: ['krishi-bazar', 'globetrotter', 'hrms-th'],
+    topics: ['RESTful API Architecture', 'JWT Authentication', 'Middleware Pipelines', 'CORS & Security'],
+  },
+  {
+    name: 'FastAPI & Flask',
+    category: 'Web & Backend',
+    level: 'core',
+    proofOfWorkProjectIds: ['finops', 'assetflow', 'secure-vote'],
+    topics: ['Async Endpoints', 'Pydantic Validation', 'API Routing', 'ML Model Serving'],
+  },
+  {
+    name: 'Prisma ORM & PostgreSQL / SQLite',
+    category: 'Databases & Tools',
+    level: 'core',
+    proofOfWorkProjectIds: ['globetrotter', 'assetflow'],
+    topics: ['Schema Migrations', 'Relational Constraints', 'Type-Safe Queries', 'Connection Management'],
+  },
+  {
+    name: 'MongoDB / Mongoose',
+    category: 'Databases & Tools',
+    level: 'working-with',
+    proofOfWorkProjectIds: ['hrms-th'],
+    topics: ['Document Modeling', 'Mongoose Schemas', 'CRUD Operations', 'Indexing'],
+  },
+  {
+    name: 'MySQL',
+    category: 'Databases & Tools',
+    level: 'working-with',
+    proofOfWorkProjectIds: ['expense-manager'],
+    topics: ['Normalized Tables', 'Prepared Statements', 'Database Administration'],
+  },
+
+  // Data Science, ML & Tools
+  {
+    name: 'Pandas & NumPy',
+    category: 'AI & Machine Learning',
+    level: 'core',
+    proofOfWorkProjectIds: ['finops'],
+    topics: ['Data Wrangling', 'Tabular Transformations', 'Statistical Aggregation', 'Imputation'],
+  },
+  {
+    name: 'Scikit-learn & Prophet',
+    category: 'AI & Machine Learning',
+    level: 'working-with',
+    proofOfWorkProjectIds: ['finops'],
+    topics: ['Anomaly Detection (Isolation Forest)', 'Time-Series Forecasting', 'Model Evaluation'],
   },
   {
     name: 'Git & GitHub',
     category: 'Databases & Tools',
     level: 'core',
-    proofOfWorkProjectIds: ['globetrotter', 'nlp-sentiment-analyzer', 'secure-threat-detector'],
-    topics: ['Branching workflows', 'Pull Requests', 'Merge conflict resolution', 'CI/CD actions'],
+    proofOfWorkProjectIds: ['krishi-bazar', 'globetrotter', 'finops', 'secure-vote'],
+    topics: ['Version Control', 'Branch Workflows', 'Commit Discipline', 'Open-Source Maintenance'],
   },
   {
-    name: 'Web Engineering (React / TypeScript)',
-    category: 'Web & Backend',
-    level: 'core',
-    proofOfWorkProjectIds: ['globetrotter'],
-    topics: ['React 18/19', 'TypeScript', 'State management', 'REST APIs', 'Responsive Tailwind CSS'],
-  },
-  {
-    name: 'C / C++',
-    category: 'Languages',
-    level: 'core',
-    topics: ['Memory management', 'Pointers', 'STL containers', 'Algorithmic problem solving'],
-  },
-
-  // WORKING WITH
-  {
-    name: 'Machine Learning',
+    name: 'MediaPipe (Computer Vision)',
     category: 'AI & Machine Learning',
     level: 'working-with',
-    proofOfWorkProjectIds: ['nlp-sentiment-analyzer', 'data-insight-dashboard'],
-    topics: ['Supervised & Unsupervised learning', 'Scikit-learn', 'Cross-validation', 'Hyperparameter tuning', 'Feature engineering'],
+    proofOfWorkProjectIds: ['particle-tracking'],
+    topics: ['Hand Landmark Tracking', 'Real-Time Video Inference', 'Gesture Recognition'],
   },
   {
-    name: 'Natural Language Processing (NLP)',
+    name: 'IBM watsonx.ai & Granite LLM',
     category: 'AI & Machine Learning',
     level: 'working-with',
-    proofOfWorkProjectIds: ['nlp-sentiment-analyzer'],
-    topics: ['Text preprocessing', 'Tokenization', 'TF-IDF & Embeddings', 'Sentiment classification', 'Transformer pipelines'],
+    proofOfWorkProjectIds: ['krishi-bazar'],
+    topics: ['LLM Agent Integration', 'Structured Prompt Orchestration', 'Market Advisory'],
   },
   {
-    name: 'Deep Learning',
-    category: 'AI & Machine Learning',
-    level: 'working-with',
-    proofOfWorkProjectIds: ['nlp-sentiment-analyzer', 'vision-classifier'],
-    topics: ['Neural network architectures', 'PyTorch / TensorFlow basics', 'Activation functions', 'Loss optimization', 'Backpropagation'],
-  },
-  {
-    name: 'Generative AI & LLM Systems',
-    category: 'AI & Machine Learning',
-    level: 'working-with',
-    proofOfWorkProjectIds: ['globetrotter'],
-    topics: ['Prompt engineering', 'RAG principles', 'Hugging Face models', 'OpenAI / Claude API integration', 'Context window management'],
-  },
-  {
-    name: 'Data Science & Analysis',
-    category: 'AI & Machine Learning',
-    level: 'working-with',
-    proofOfWorkProjectIds: ['data-insight-dashboard'],
-    topics: ['Exploratory Data Analysis (EDA)', 'Statistical hypothesis testing', 'Pandas & Seaborn', 'Data cleaning pipelines'],
-  },
-  {
-    name: 'Node.js & Backend APIs',
-    category: 'Web & Backend',
-    level: 'working-with',
-    proofOfWorkProjectIds: ['globetrotter'],
-    topics: ['Express.js', 'RESTful architecture', 'JWT authentication', 'Middleware pipelines', 'Error handling'],
-  },
-
-  // EXPLORING
-  {
-    name: 'Cybersecurity Fundamentals',
-    category: 'Systems & Security',
-    level: 'exploring',
-    proofOfWorkProjectIds: ['secure-threat-detector'],
-    topics: ['OWASP Top 10', 'Network packet analysis', 'Vulnerability scanning', 'Secure coding practices', 'Authentication security'],
-  },
-  {
-    name: 'MLOps & Model Deployment',
+    name: 'Docker Basics',
     category: 'Databases & Tools',
     level: 'exploring',
-    topics: ['Model serialization (ONNX / Pickle)', 'Docker containerization', 'FastAPI microservices', 'Inference monitoring'],
-  },
-  {
-    name: 'Cloud Infrastructure & Linux',
-    category: 'Databases & Tools',
-    level: 'exploring',
-    topics: ['Linux shell scripting', 'AWS/Vercel deployments', 'Environment configuration', 'Process management'],
+    proofOfWorkProjectIds: ['expense-manager'],
+    topics: ['Containerization Basics', 'Dockerfile Configuration'],
   },
 ];
 
-export const skillCategories = [
-  'Languages',
-  'AI & Machine Learning',
-  'Web & Backend',
-  'Databases & Tools',
-  'Systems & Security',
-] as const;
-
-export const areasExploring = [
+export const areasExploring: AreaExploring[] = [
   {
-    title: 'Intelligent Systems',
-    description: 'Developing end-to-end Machine Learning, Deep Learning, NLP, and Generative AI pipelines that transform raw data into actionable inference.',
-    technologies: ['Machine Learning', 'Deep Learning', 'NLP', 'Transformers', 'LLMs'],
-    icon: 'Brain',
+    title: 'Data Science & Applied Analytics',
+    description: 'Working with tabular datasets, time-series forecasting, statistical profiling, and anomaly detection algorithms.',
+    status: 'Active Learning & Building',
+    technologies: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'Prophet'],
   },
   {
-    title: 'Data & Analytics',
-    description: 'Extracting empirical signal from noise through structured exploratory data analysis, statistical modeling, and data pipelines.',
-    technologies: ['Data Science', 'Pandas', 'NumPy', 'EDA', 'Statistical Modeling'],
-    icon: 'Database',
+    title: 'Full-Stack Software Engineering',
+    description: 'Engineering scalable web platforms with type-safe APIs, relational databases, and clean frontend architectures.',
+    status: 'Core Competency',
+    technologies: ['React', 'TypeScript', 'Node.js', 'FastAPI', 'PostgreSQL', 'Prisma'],
   },
   {
-    title: 'Software Engineering',
-    description: 'Architecting scalable, maintainable web applications and RESTful APIs with clean modular separation and strong typing.',
-    technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'REST APIs'],
-    icon: 'Code',
+    title: 'Intelligent Systems & AI Integration',
+    description: 'Connecting generative AI endpoints, enterprise LLMs (IBM watsonx.ai), and agentic workflows to real-world domain tools.',
+    status: 'Applied in Projects',
+    technologies: ['IBM watsonx.ai', 'Granite LLM', 'REST APIs', 'FastAPI'],
   },
   {
-    title: 'Cybersecurity',
-    description: 'Investigating web security vulnerabilities, network threat detection, and implementing defense-in-depth principles in software.',
-    technologies: ['OWASP', 'Vulnerability Assessment', 'Threat Modeling', 'Network Security'],
-    icon: 'Shield',
+    title: 'Security & Web3 Systems',
+    description: 'Exploring smart contract development on Ethereum, cryptographic hashing, and identity verification pipelines.',
+    status: 'Exploratory Projects',
+    technologies: ['Solidity', 'Hardhat', 'AES-256', 'EasyOCR', 'Ethers.js'],
   },
 ];
 
-export const learningJourney = [
+export const learningJourney: LearningMilestone[] = [
   {
     year: '2024',
-    title: 'Programming Foundations & Web Engineering',
-    description: 'Mastered core algorithmic problem solving in C/C++ and Python. Built fundamental full-stack web applications and relational database schemas.',
-    milestones: ['Data Structures in C++', 'Full-stack JavaScript & SQL', 'Object-Oriented Design'],
+    title: 'Core Foundations & Web Engineering',
+    description: 'Mastered programming fundamentals, relational database design with SQL, and modern JavaScript/PHP web architectures.',
+    skills: ['JavaScript', 'PHP', 'MySQL', 'Git & GitHub', 'Web Development'],
   },
   {
     year: '2025',
-    title: 'Data Science & Machine Learning Core',
-    description: 'Transitioned into empirical computing. Developed supervised and unsupervised ML models, performed in-depth exploratory data analysis, and competed in hackathons.',
-    milestones: ['Scikit-learn & Statistical Modeling', 'Pandas & Feature Engineering', 'Hackathon Building'],
+    title: 'Full-Stack TypeScript & Data Analysis',
+    description: 'Built enterprise web platforms, explored Python data science pipelines, time-series forecasting, and smart contract development.',
+    skills: ['TypeScript', 'React', 'Node.js', 'Python', 'FastAPI', 'Solidity', 'Pandas'],
   },
   {
     year: '2026',
-    title: 'NLP, Deep Learning & Generative AI Systems',
-    description: 'Deepened specialization in text processing, transformer models, and AI-assisted full-stack architectures like GlobeTrotter.',
-    milestones: ['Transformer Pipelines & Embeddings', 'Full-stack AI Integrations', 'Pre-final Year Capstones'],
+    title: 'Applied AI & Advanced Engineering',
+    description: 'Developing AI-integrated market solutions, agentic workflows with IBM watsonx.ai, and preparing for professional engineering opportunities.',
+    skills: ['IBM watsonx.ai', 'Granite LLM', 'Prisma ORM', 'Machine Learning', 'System Design'],
   },
   {
     year: 'Next',
-    title: 'Production MLOps & Scalable AI Infrastructure',
-    description: 'Targeting production deployment, inference optimization, distributed training workflows, and high-impact industry engineering roles.',
-    milestones: ['Model Serving & MLOps', 'System Architecture', 'Industry Internships'],
+    title: 'Industry Internships & High-Scale Systems',
+    description: 'Targeting software engineering and data science internship opportunities to build robust, high-impact production systems.',
+    skills: ['Production Systems', 'Distributed Data', 'MLOps', 'Cloud Infrastructure'],
   },
 ];

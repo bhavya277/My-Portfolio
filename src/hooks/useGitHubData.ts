@@ -3,13 +3,14 @@ import { useState, useEffect } from 'react';
 export interface GitHubRepo {
   id: number;
   name: string;
-  description: string;
+  description: string | null;
   html_url: string;
+  homepage?: string | null;
   stargazers_count: number;
   forks_count: number;
   language: string;
   updated_at: string;
-  topics: string[];
+  topics?: string[];
 }
 
 export interface GitHubProfileStats {
@@ -25,62 +26,110 @@ export interface GitHubProfileStats {
 const FALLBACK_REPOS: GitHubRepo[] = [
   {
     id: 1,
-    name: 'globetrotter',
-    description: 'Full-stack AI-assisted travel discovery & itinerary planning platform with interactive geospatial maps and PostgreSQL storage.',
-    html_url: 'https://github.com/bhavya277/globetrotter',
-    stargazers_count: 14,
-    forks_count: 3,
+    name: 'Krishi-Bazar',
+    description: 'AI-Powered Agricultural Market Linkage Platform with real-time APMC mandi price discovery and IBM watsonx.ai Granite LLM forecasting.',
+    html_url: 'https://github.com/bhavya277/Krishi-Bazar',
+    stargazers_count: 0,
+    forks_count: 0,
     language: 'TypeScript',
-    updated_at: '2026-07-15T10:00:00Z',
-    topics: ['react', 'typescript', 'postgresql', 'generative-ai', 'nodejs'],
+    updated_at: '2026-08-23T06:00:00Z',
+    topics: ['react', 'typescript', 'watsonx-ai', 'express', 'market-intelligence'],
   },
   {
     id: 2,
-    name: 'nlp-sentiment-pipeline',
-    description: 'Comparative NLP text sentiment pipeline: TF-IDF + Classical ML vs DistilBERT Transformer fine-tuning with FastAPI serving.',
-    html_url: 'https://github.com/bhavya277/nlp-sentiment-pipeline',
-    stargazers_count: 8,
-    forks_count: 2,
-    language: 'Python',
-    updated_at: '2026-06-20T14:30:00Z',
-    topics: ['nlp', 'transformers', 'pytorch', 'fastapi', 'scikit-learn'],
+    name: 'GlobeTrotter',
+    description: 'Full-stack multi-city travel planning platform with drag-and-drop itinerary organization and Prisma relational storage.',
+    html_url: 'https://github.com/bhavya277/GlobeTrotter',
+    stargazers_count: 1,
+    forks_count: 0,
+    language: 'TypeScript',
+    updated_at: '2026-08-22T11:00:00Z',
+    topics: ['react', 'typescript', 'prisma', 'express', 'sqlite', 'travel'],
   },
   {
     id: 3,
-    name: 'network-threat-detector',
-    description: 'Anomaly-based network intrusion detection system evaluating random forest & decision tree classifiers on flow packets.',
-    html_url: 'https://github.com/bhavya277/network-threat-detector',
-    stargazers_count: 6,
-    forks_count: 1,
+    name: 'FinOps',
+    description: 'Cloud financial operations analytics platform combining Prophet time-series cost forecasting and Isolation Forest anomaly detection.',
+    html_url: 'https://github.com/bhavya277/FinOps',
+    stargazers_count: 0,
+    forks_count: 0,
     language: 'Python',
-    updated_at: '2026-05-10T09:15:00Z',
-    topics: ['cybersecurity', 'random-forest', 'network-security', 'eda'],
+    updated_at: '2026-05-07T16:00:00Z',
+    topics: ['python', 'flask', 'prophet', 'scikit-learn', 'react', 'data-science'],
   },
   {
     id: 4,
-    name: 'data-insight-framework',
-    description: 'Automated exploratory data analysis platform generating statistical distributions, correlation heatmaps, and outlier reports.',
-    html_url: 'https://github.com/bhavya277/data-insight-framework',
-    stargazers_count: 5,
-    forks_count: 1,
-    language: 'Python',
-    updated_at: '2026-04-18T16:00:00Z',
-    topics: ['data-science', 'pandas', 'streamlit', 'visualization'],
+    name: 'blockchain-based-Voting-System',
+    description: 'Decentralized and biometrically-secured voting system combining Ethereum smart contracts, EasyOCR verification, and AES-256 encryption.',
+    html_url: 'https://github.com/bhavya277/blockchain-based-Voting-System',
+    stargazers_count: 1,
+    forks_count: 0,
+    language: 'Solidity / TS',
+    updated_at: '2026-03-25T03:00:00Z',
+    topics: ['solidity', 'ethereum', 'hardhat', 'fastapi', 'easyocr', 'web3'],
+  },
+  {
+    id: 5,
+    name: 'HRMS_TH',
+    description: 'Human Resource Management System streamlining employee administration, attendance tracking, leave approvals, and PDF payroll.',
+    html_url: 'https://github.com/bhavya277/HRMS_TH',
+    homepage: 'https://hrmsth.vercel.app',
+    stargazers_count: 1,
+    forks_count: 0,
+    language: 'TypeScript',
+    updated_at: '2026-04-03T06:00:00Z',
+    topics: ['react', 'typescript', 'mongodb', 'express', 'tailwind', 'jspdf'],
+  },
+  {
+    id: 6,
+    name: 'AssetFlow',
+    description: 'Enterprise asset management platform to track, allocate, maintain, audit, and report on organizational assets.',
+    html_url: 'https://github.com/bhavya277/AssetFlow',
+    stargazers_count: 1,
+    forks_count: 0,
+    language: 'TypeScript',
+    updated_at: '2026-07-12T11:00:00Z',
+    topics: ['react', 'fastapi', 'typescript', 'python', 'enterprise'],
+  },
+  {
+    id: 7,
+    name: 'Particle-tracking',
+    description: 'Interactive 3D particle system controlled by real-time webcam hand gesture tracking using MediaPipe and Three.js.',
+    html_url: 'https://github.com/bhavya277/Particle-tracking',
+    homepage: 'https://particle-tracking.vercel.app',
+    stargazers_count: 1,
+    forks_count: 0,
+    language: 'JavaScript',
+    updated_at: '2026-01-04T06:00:00Z',
+    topics: ['threejs', 'mediapipe', 'computervision', 'webgl', 'javascript'],
+  },
+  {
+    id: 8,
+    name: 'Expense-Manager',
+    description: 'PHP + MySQL web application for personal expense tracking, monthly budgets, and interactive Chart.js analytics.',
+    html_url: 'https://github.com/bhavya277/Expense-Manager',
+    homepage: 'https://expensemanager27.great-site.net/',
+    stargazers_count: 1,
+    forks_count: 0,
+    language: 'PHP',
+    updated_at: '2026-01-03T12:00:00Z',
+    topics: ['php', 'mysql', 'docker', 'bootstrap', 'finance'],
   },
 ];
 
 const FALLBACK_LANGUAGES = [
-  { name: 'Python', percentage: 52, color: '#3572A5' },
-  { name: 'TypeScript', percentage: 28, color: '#3178C6' },
-  { name: 'JavaScript', percentage: 12, color: '#F7DF1E' },
-  { name: 'C++', percentage: 8, color: '#F34B7D' },
+  { name: 'TypeScript', percentage: 48, color: '#3178C6' },
+  { name: 'Python', percentage: 26, color: '#3572A5' },
+  { name: 'JavaScript', percentage: 14, color: '#F7DF1E' },
+  { name: 'PHP', percentage: 7, color: '#4F5D95' },
+  { name: 'Solidity', percentage: 5, color: '#AA6746' },
 ];
 
 export const useGitHubData = (username: string = 'bhavya277'): GitHubProfileStats => {
   const [data, setData] = useState<GitHubProfileStats>({
-    public_repos: 18,
-    followers: 12,
-    following: 15,
+    public_repos: 9,
+    followers: 1,
+    following: 3,
     topRepos: FALLBACK_REPOS,
     languages: FALLBACK_LANGUAGES,
     isLoading: true,
@@ -89,34 +138,28 @@ export const useGitHubData = (username: string = 'bhavya277'): GitHubProfileStat
 
   useEffect(() => {
     let isMounted = true;
-    const fetchGitHub = async () => {
+
+    const fetchGitHubData = async () => {
       try {
-        const userRes = await fetch(`https://api.github.com/users/${username}`);
-        if (!userRes.ok) throw new Error('Failed to fetch user');
+        const [userRes, reposRes] = await Promise.all([
+          fetch(`https://api.github.com/users/${username}`),
+          fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=12`),
+        ]);
+
+        if (!userRes.ok || !reposRes.ok) {
+          throw new Error('GitHub API rate limited or user not found');
+        }
+
         const userData = await userRes.json();
+        const reposData: GitHubRepo[] = await reposRes.json();
 
-        const reposRes = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=10`);
-        if (!reposRes.ok) throw new Error('Failed to fetch repos');
-        const reposData = await reposRes.json();
-
-        if (isMounted && Array.isArray(reposData) && reposData.length > 0) {
-          const formattedRepos: GitHubRepo[] = reposData.slice(0, 4).map((r: any) => ({
-            id: r.id,
-            name: r.name,
-            description: r.description || 'Repository dedicated to software & AI/ML engineering.',
-            html_url: r.html_url,
-            stargazers_count: r.stargazers_count || 0,
-            forks_count: r.forks_count || 0,
-            language: r.language || 'Code',
-            updated_at: r.updated_at,
-            topics: r.topics || [],
-          }));
-
+        if (isMounted) {
+          const nonForked = reposData.filter((r: any) => !r.fork);
           setData({
-            public_repos: userData.public_repos || 18,
-            followers: userData.followers || 12,
-            following: userData.following || 15,
-            topRepos: formattedRepos.length > 0 ? formattedRepos : FALLBACK_REPOS,
+            public_repos: userData.public_repos || 9,
+            followers: userData.followers || 1,
+            following: userData.following || 3,
+            topRepos: nonForked.length > 0 ? nonForked : FALLBACK_REPOS,
             languages: FALLBACK_LANGUAGES,
             isLoading: false,
             isError: false,
@@ -124,21 +167,17 @@ export const useGitHubData = (username: string = 'bhavya277'): GitHubProfileStat
         }
       } catch (err) {
         if (isMounted) {
-          // Graceful fallback
-          setData({
-            public_repos: 18,
-            followers: 12,
-            following: 15,
-            topRepos: FALLBACK_REPOS,
-            languages: FALLBACK_LANGUAGES,
+          setData((prev) => ({
+            ...prev,
             isLoading: false,
-            isError: true, // Marked as error but populated with fallback
-          });
+            isError: true,
+          }));
         }
       }
     };
 
-    fetchGitHub();
+    fetchGitHubData();
+
     return () => {
       isMounted = false;
     };

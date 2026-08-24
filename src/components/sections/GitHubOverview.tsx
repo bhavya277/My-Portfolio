@@ -91,7 +91,7 @@ export const GitHubOverview: React.FC = () => {
                 </p>
 
                 <div className="flex flex-wrap gap-1.5 mb-2">
-                  {repo.topics.slice(0, 3).map((topic, tIdx) => (
+                  {repo.topics?.slice(0, 3).map((topic, tIdx) => (
                     <span
                       key={tIdx}
                       className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900/90 text-primary-300/80 border border-slate-800"

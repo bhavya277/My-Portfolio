@@ -1,5 +1,6 @@
 import React from 'react';
 import { learningJourney } from '../../data/skills';
+import { LearningMilestone } from '../../types';
 import { SectionHeader } from '../ui/SectionHeader';
 import { Card } from '../ui/Card';
 import { CheckCircle2 } from 'lucide-react';
@@ -15,7 +16,7 @@ export const LearningJourney: React.FC = () => {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          {learningJourney.map((step, idx) => (
+          {learningJourney.map((step: LearningMilestone, idx: number) => (
             <Card key={idx} variant="default" className="p-5 flex flex-col justify-between relative overflow-hidden">
               {/* Year indicator */}
               <div>
@@ -30,16 +31,16 @@ export const LearningJourney: React.FC = () => {
                   {step.title}
                 </h3>
 
-                <p className="text-xs text-slate-400 leading-relaxed mb-4">
+                <p className="text-xs text-slate-300 leading-relaxed mb-4">
                   {step.description}
                 </p>
               </div>
 
               <div className="pt-3 border-t border-border-dark space-y-1.5">
-                {step.milestones.map((m, mIdx) => (
-                  <div key={mIdx} className="flex items-center gap-1.5 text-[11px] text-slate-300 font-mono">
+                {(step.skills || []).map((skill: string, sIdx: number) => (
+                  <div key={sIdx} className="flex items-center gap-1.5 text-[11px] text-slate-300 font-mono">
                     <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" />
-                    <span className="truncate">{m}</span>
+                    <span className="truncate">{skill}</span>
                   </div>
                 ))}
               </div>

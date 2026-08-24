@@ -3,10 +3,10 @@ import { ProfileData } from '../types';
 export const profileData: ProfileData = {
   name: 'Bhavya Modi',
   title: 'B.Tech IT Student',
-  subtitle: 'AI/ML • Data Science',
+  subtitle: 'Data Science & Analytics • Software Engineering • AI/ML',
   bioHeadline: 'Building intelligent, data-driven systems at the intersection of machine learning, software engineering, and cybersecurity.',
   shortBio: 'Pre-final year Information Technology undergraduate focused on developing production-grade machine learning models, end-to-end AI applications, and robust web systems. Passionate about solving real-world challenges through clean engineering, continuous experimentation, and empirical evaluation.',
-  location: 'India',
+  location: 'Gujarat, India',
   email: 'modibhavya128@gmail.com',
   resumeUrl: '/resume.pdf',
   socials: {
@@ -21,14 +21,14 @@ export const profileData: ProfileData = {
     lookingFor: 'AI/ML, Data Science, and Software Engineering internships (Summer / Fall 2026)',
   },
   recruiterSnapshot: {
-    status: 'Open to Internships / Collaborations',
-    graduationYear: '2026',
+    status: 'Open to Opportunities',
+    graduationYear: '2028',
     targetRoles: [
-      'AI / Machine Learning Engineer Intern',
       'Data Science Intern',
+      'AI / Machine Learning Engineer Intern',
       'Software Development Engineer Intern (Full-Stack / Backend)',
     ],
-    topProjectIds: ['globetrotter', 'nlp-sentiment-analyzer', 'secure-threat-detector'],
-    coreSkills: ['Python', 'Machine Learning', 'NLP', 'React', 'SQL', 'Git & GitHub'],
+    topProjectIds: ['krishi-bazar', 'globetrotter', 'finops', 'secure-vote'],
+    coreSkills: ['TypeScript', 'Python', 'React', 'Node.js', 'FastAPI', 'SQL', 'Git & GitHub'],
   },
 };

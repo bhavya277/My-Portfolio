@@ -47,21 +47,40 @@ export type SkillLevel = 'core' | 'working-with' | 'exploring';
 
 export interface SkillItem {
   name: string;
-  category: 'Languages' | 'AI & Machine Learning' | 'Web & Backend' | 'Databases & Tools' | 'Systems & Security';
+  category: string;
   level: SkillLevel;
-  iconName?: string;
   proofOfWorkProjectIds?: string[];
   topics?: string[];
+}
+
+export interface SkillCategory {
+  category: string;
+  description: string;
+  skills: SkillItem[];
+}
+
+export interface AreaExploring {
+  title: string;
+  description: string;
+  status: string;
+  technologies: string[];
+}
+
+export interface LearningMilestone {
+  year: string;
+  title: string;
+  description: string;
+  skills: string[];
 }
 
 export interface ExperienceItem {
   id: string;
   organization: string;
   role: string;
-  location: string;
+  location?: string;
   period: string;
   type: 'Internship' | 'Technical Club' | 'Team Project' | 'Leadership' | 'Open Source';
-  description: string;
+  description?: string;
   responsibilities: string[];
   achievements?: string[];
   technologies: string[];
@@ -105,12 +124,13 @@ export interface CertificationItem {
 }
 
 export interface EducationItem {
+  id?: string;
   degree: string;
   field: string;
   institution: string;
-  location: string;
+  location?: string;
   period: string;
-  status: string;
+  status?: string;
   grade?: string;
   coursework: string[];
   focusAreas: string[];

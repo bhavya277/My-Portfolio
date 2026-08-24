@@ -8,22 +8,22 @@ export const EngineeringSnapshot: React.FC = () => {
     {
       category: 'Languages',
       icon: <Code className="w-4 h-4 text-primary-400" />,
-      items: ['Python', 'C / C++', 'TypeScript / JS', 'SQL'],
+      items: ['TypeScript', 'Python', 'JavaScript (ES6+)', 'SQL', 'Solidity', 'PHP'],
     },
     {
-      category: 'AI & Data Science',
+      category: 'Data Science & AI',
       icon: <Brain className="w-4 h-4 text-cyan-400" />,
-      items: ['Machine Learning', 'Deep Learning', 'NLP & Transformers', 'Scikit-learn', 'Pandas'],
+      items: ['Pandas & NumPy', 'Scikit-learn', 'Prophet Forecasting', 'Isolation Forest', 'IBM watsonx.ai'],
     },
     {
-      category: 'Development',
+      category: 'Web & APIs',
       icon: <Layout className="w-4 h-4 text-emerald-400" />,
-      items: ['React / Next.js', 'Node.js / Express', 'PostgreSQL', 'RESTful APIs', 'Tailwind CSS'],
+      items: ['React (Vite)', 'Node.js / Express', 'FastAPI / Flask', 'Prisma ORM', 'Tailwind CSS'],
     },
     {
-      category: 'Tools & Systems',
+      category: 'Databases & Tools',
       icon: <Wrench className="w-4 h-4 text-amber-400" />,
-      items: ['Git & GitHub', 'Linux CLI', 'FastAPI', 'Docker Basics', 'Cybersecurity Labs'],
+      items: ['PostgreSQL & SQLite', 'MongoDB & MySQL', 'Git & GitHub', 'Hardhat & Web3', 'Docker Basics'],
     },
   ];
 
