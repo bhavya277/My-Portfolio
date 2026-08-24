@@ -48,13 +48,11 @@ export const Navbar: React.FC<NavbarProps> = ({
     { label: 'Home', path: '/' },
     { label: 'About', path: '/about' },
     { label: 'Projects', path: '/projects' },
-    { label: 'Experience', path: '/experience' },
+    { label: 'Technical Skills', path: '/skills' },
     { label: 'Contact', path: '/contact' },
   ];
 
   const moreNavItems = [
-    { label: 'Technical Skills', path: '/skills' },
-    { label: 'Hackathons', path: '/hackathons' },
     { label: 'Achievements', path: '/achievements' },
     { label: 'Certifications', path: '/certifications' },
     { label: 'Education', path: '/education' },

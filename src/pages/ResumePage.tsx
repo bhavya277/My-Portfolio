@@ -3,8 +3,8 @@ import { Button } from '../components/ui/Button';
 import { profileData } from '../data/profile';
 import { projectsData } from '../data/projects';
 import { educationData } from '../data/education';
-import { experienceData } from '../data/experience';
-import { Download, Printer, Github, Linkedin } from 'lucide-react';
+import { achievementsData } from '../data/achievements';
+import { Download, Printer, Github, Linkedin, Award } from 'lucide-react';
 
 export const ResumePage: React.FC = () => {
   const handlePrint = () => {
@@ -103,9 +103,9 @@ export const ResumePage: React.FC = () => {
             <div key={idx} className="flex flex-col sm:flex-row sm:items-start justify-between text-xs gap-1">
               <div>
                 <strong className="text-white text-sm print:text-black">{edu.degree} in {edu.field}</strong>
-                <div className="text-slate-400 print:text-slate-700 font-mono">{edu.institution}, {edu.location}</div>
+                <div className="text-slate-400 print:text-slate-700 font-mono">{edu.institution}</div>
                 <div className="text-[11px] text-slate-400 mt-1 print:text-slate-600">
-                  Coursework: {edu.coursework.slice(0, 5).join(' • ')}
+                  Coursework: {edu.coursework.slice(0, 6).join(' • ')}
                 </div>
               </div>
               <div className="text-slate-400 font-mono text-right shrink-0 print:text-slate-600">
@@ -143,14 +143,14 @@ export const ResumePage: React.FC = () => {
         {/* Selected Projects */}
         <div className="py-5 border-b border-border-dark space-y-4">
           <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-primary-400 print:text-blue-800">
-            Key Projects & Implementations
+            Key Technical Projects
           </h3>
 
-          {projectsData.slice(0, 3).map((proj) => (
+          {projectsData.slice(0, 4).map((proj) => (
             <div key={proj.id} className="space-y-1 text-xs">
               <div className="flex items-center justify-between">
                 <strong className="text-white text-sm print:text-black">{proj.title.split('—')[0]}</strong>
-                <span className="font-mono text-slate-400 print:text-slate-600">{proj.tags.slice(0, 3).join(' • ')}</span>
+                <span className="font-mono text-slate-400 print:text-slate-600">{proj.tags.slice(0, 4).join(' • ')}</span>
               </div>
               <p className="text-slate-300 print:text-slate-800">{proj.tagline}</p>
               <ul className="list-disc list-inside space-y-0.5 text-slate-400 pl-1 print:text-slate-700">
@@ -162,26 +162,28 @@ export const ResumePage: React.FC = () => {
           ))}
         </div>
 
-        {/* Experience & Leadership */}
-        <div className="pt-5 space-y-4">
+        {/* Achievements & Milestones */}
+        <div className="pt-5 space-y-3">
           <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-primary-400 print:text-blue-800">
-            Experience & Technical Leadership
+            Key Achievements & Competitions
           </h3>
 
-          {experienceData.slice(0, 2).map((exp) => (
-            <div key={exp.id} className="space-y-1 text-xs">
-              <div className="flex items-center justify-between">
-                <strong className="text-white text-sm print:text-black">{exp.role}</strong>
-                <span className="font-mono text-slate-400 print:text-slate-600">{exp.period}</span>
+          <div className="space-y-2">
+            {achievementsData.map((ach) => (
+              <div key={ach.id} className="flex items-start justify-between text-xs gap-2">
+                <div className="space-y-0.5">
+                  <div className="font-semibold text-white print:text-black flex items-center gap-1.5">
+                    <Award className="w-3 h-3 text-amber-400 shrink-0 print:hidden" />
+                    <span>{ach.title}</span>
+                  </div>
+                  <p className="text-slate-400 print:text-slate-700">{ach.description}</p>
+                </div>
+                <div className="text-slate-400 font-mono text-right shrink-0 print:text-slate-600 text-[11px]">
+                  {ach.date}
+                </div>
               </div>
-              <div className="text-primary-300 print:text-blue-700 font-mono">{exp.organization}</div>
-              <ul className="list-disc list-inside space-y-0.5 text-slate-400 pl-1 print:text-slate-700">
-                {exp.responsibilities.slice(0, 2).map((r, rIdx) => (
-                  <li key={rIdx}>{r}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
       </div>

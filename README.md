@@ -14,9 +14,7 @@ All portfolio content is separated into clean, structured data files in [`src/da
 - **Profile & Bio**: [`src/data/profile.ts`](file:///src/data/profile.ts)
 - **Projects & Case Studies**: [`src/data/projects.ts`](file:///src/data/projects.ts)
 - **Skills Matrix & Tiers**: [`src/data/skills.ts`](file:///src/data/skills.ts)
-- **Experience Timeline**: [`src/data/experience.ts`](file:///src/data/experience.ts)
-- **Hackathons**: [`src/data/hackathons.ts`](file:///src/data/hackathons.ts)
-- **Achievements & Awards**: [`src/data/achievements.ts`](file:///src/data/achievements.ts)
+- **Achievements & Competitions**: [`src/data/achievements.ts`](file:///src/data/achievements.ts)
 - **Certifications**: [`src/data/certifications.ts`](file:///src/data/certifications.ts)
 - **Education & Coursework**: [`src/data/education.ts`](file:///src/data/education.ts)
 

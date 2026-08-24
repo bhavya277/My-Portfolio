@@ -12,9 +12,7 @@ This guide explains **which file controls which part of your website**, making i
 | **"Currently" Status (Building, Learning, Exploring, Looking For)** | [`src/data/profile.ts`](file:///src/data/profile.ts) |
 | **Projects & Case Studies (Krishi Bazaar, GlobeTrotter, FinOps, SecureVote, HRMS, AssetFlow, etc.)** | [`src/data/projects.ts`](file:///src/data/projects.ts) |
 | **Technical Skills (Core, Working With, Exploring + Proof of Work)** | [`src/data/skills.ts`](file:///src/data/skills.ts) |
-| **Work Experience, Clubs, and Technical Roles** | [`src/data/experience.ts`](file:///src/data/experience.ts) |
-| **Hackathon Showcases (IBM Hackathon, etc.)** | [`src/data/hackathons.ts`](file:///src/data/hackathons.ts) |
-| **Achievements, Awards & Competition Rankings** | [`src/data/achievements.ts`](file:///src/data/achievements.ts) |
+| **Achievements, Hackathon Results & Competition Rankings** | [`src/data/achievements.ts`](file:///src/data/achievements.ts) |
 | **Certifications, Coursework Credentials & Verification Links** | [`src/data/certifications.ts`](file:///src/data/certifications.ts) |
 | **Degree, University, CGPA, and Coursework Subjects** | [`src/data/education.ts`](file:///src/data/education.ts) |
 | **Resume PDF File (for 1-click downloads)** | Put `resume.pdf` into [`public/resume.pdf`](file:///public/resume.pdf) |
@@ -28,7 +26,7 @@ Controls your global persona and recruiter snapshot:
 - `name`: Your full name (*Bhavya Modi*).
 - `title`: Professional subtitle (*B.Tech IT Student*).
 - `subtitle`: Focus domains (*Data Science & Analytics • Software Engineering • AI/ML*).
-- `bioHeadline`: The exact positioning statement displayed in the Hero and on GitHub.
+- `bioHeadline`: The exact positioning statement displayed in the Hero.
 - `shortBio`: Extended summary for About page, Resume, and Recruiter Modal.
 - `location`: Your location (*Gujarat, India*).
 - `email`: Your contact email (`modibhavya128@gmail.com`).
@@ -60,32 +58,19 @@ Controls the **Skills Matrix Page** and Homepage sections:
 
 ---
 
-### 4. `src/data/experience.ts`
-Controls the **Experience Page** (`/experience`):
-- Clean placeholders with `[NEEDS USER CONFIRMATION]` ready for your real internships, club roles, or employment history.
-
----
-
-### 5. `src/data/hackathons.ts`
-Controls the **Hackathons Page** (`/hackathons`):
-- Includes IBM Hackathon (Krishi Bazaar) verified from repository.
-- Placeholders for additional hackathons.
-
----
-
-### 6. `src/data/achievements.ts`
+### 4. `src/data/achievements.ts`
 Controls the **Achievements Page** (`/achievements`):
-- Clean placeholders marked `[ADD ACHIEVEMENT]`.
+- Features your hackathons and competition selections (IIT Madras Finalist, IIT Kanpur Offline, IIT BHU Offline, Nexothon Finalist, Karnataka Police Datathon, CVM Hackathon, etc.).
 
 ---
 
-### 7. `src/data/certifications.ts`
+### 5. `src/data/certifications.ts`
 Controls the **Certifications Page** (`/certifications`):
-- Clean placeholders marked `[ADD CERTIFICATION]`.
+- Placeholders for your verifiable credentials.
 
 ---
 
-### 8. `src/data/education.ts`
+### 6. `src/data/education.ts`
 Controls the **Education Page** (`/education`):
 - B.Tech Information Technology curriculum, coursework, and focus areas.
 

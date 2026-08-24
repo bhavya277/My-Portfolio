@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, Home, User, Code2, Briefcase, Award, GraduationCap, FileText, Mail, Terminal } from 'lucide-react';
+import { Search, Home, User, Code2, Award, GraduationCap, FileText, Mail, Terminal } from 'lucide-react';
 import { projectsData } from '../../data/projects';
 
 interface CommandPaletteProps {
@@ -44,8 +44,6 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
     { label: 'About Bhavya', path: '/about', icon: <User className="w-4 h-4" /> },
     { label: 'Projects & Case Studies', path: '/projects', icon: <Code2 className="w-4 h-4" /> },
     { label: 'Technical Skills Matrix', path: '/skills', icon: <Terminal className="w-4 h-4" /> },
-    { label: 'Experience & Timeline', path: '/experience', icon: <Briefcase className="w-4 h-4" /> },
-    { label: 'Hackathons', path: '/hackathons', icon: <Award className="w-4 h-4" /> },
     { label: 'Achievements', path: '/achievements', icon: <Award className="w-4 h-4" /> },
     { label: 'Certifications', path: '/certifications', icon: <Award className="w-4 h-4" /> },
     { label: 'Education & Curriculum', path: '/education', icon: <GraduationCap className="w-4 h-4" /> },

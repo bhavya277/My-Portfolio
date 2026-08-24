@@ -13,8 +13,6 @@ import { AboutPage } from './pages/AboutPage';
 import { SkillsPage } from './pages/SkillsPage';
 import { ProjectsPage } from './pages/ProjectsPage';
 import { ProjectDetailPage } from './pages/ProjectDetailPage';
-import { ExperiencePage } from './pages/ExperiencePage';
-import { HackathonsPage } from './pages/HackathonsPage';
 import { AchievementsPage } from './pages/AchievementsPage';
 import { CertificationsPage } from './pages/CertificationsPage';
 import { EducationPage } from './pages/EducationPage';
@@ -43,8 +41,6 @@ export function App() {
               <Route path="/skills" element={<SkillsPage />} />
               <Route path="/projects" element={<ProjectsPage />} />
               <Route path="/projects/:id" element={<ProjectDetailPage />} />
-              <Route path="/experience" element={<ExperiencePage />} />
-              <Route path="/hackathons" element={<HackathonsPage />} />
               <Route path="/achievements" element={<AchievementsPage />} />
               <Route path="/certifications" element={<CertificationsPage />} />
               <Route path="/education" element={<EducationPage />} />
