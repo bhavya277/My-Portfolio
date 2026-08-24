@@ -15,7 +15,7 @@ export const AboutPage: React.FC = () => {
     },
     {
       title: 'Fundamentals Before Frameworks',
-      description: 'Prioritizing data structures, algorithms, network protocols, and mathematical intuition before reaching for high-level abstractions.',
+      description: 'Prioritizing data structures, algorithms, relational database principles, and mathematical intuition before reaching for high-level abstractions.',
       icon: <Layers className="w-4 h-4 text-cyan-400" />,
     },
     {
@@ -25,7 +25,7 @@ export const AboutPage: React.FC = () => {
     },
     {
       title: 'Build For Real Utility',
-      description: 'Whether it is a full-stack platform like GlobeTrotter or a security threat classifier, the objective is measurable utility and clean design.',
+      description: 'Whether it is an agricultural market platform like Krishi Bazaar, a full-stack platform like GlobeTrotter, or a cloud cost analytics suite like FinOps, the objective is measurable utility.',
       icon: <Brain className="w-4 h-4 text-amber-400" />,
     },
   ];
@@ -35,7 +35,7 @@ export const AboutPage: React.FC = () => {
       <SectionHeader
         label="BACKGROUND & MINDSET"
         title="About Bhavya Modi"
-        description="Pre-final year Information Technology undergraduate focused on applied machine learning, robust software systems, and data-driven problem solving."
+        description="B.Tech Information Technology student specializing in Data Science & Analytics, with a strong interest in building intelligent and impactful technology."
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
@@ -43,38 +43,51 @@ export const AboutPage: React.FC = () => {
         <div className="lg:col-span-7 space-y-6 text-sm text-slate-300 leading-relaxed">
           <Card variant="default" className="p-6 space-y-4">
             <h3 className="text-base font-bold text-white tracking-tight">
-              Engineering Foundations & Focus
+              Engineering Foundations & Direction
             </h3>
             <p>
-              I am an Information Technology student currently in my pre-final year of B.Tech. My technical journey began with core computer science principles—data structures, algorithms in C++, and relational database design.
+              I am a B.Tech Information Technology student specializing in Data Science & Analytics. My journey is centered around developing solid software engineering practices, exploring applied machine learning models, and building full-stack web platforms.
             </p>
             <p>
-              As I developed a solid foundation, I transitioned into empirical computing and artificial intelligence: studying how statistical machine learning models, natural language processing pipelines, and deep neural architectures can solve non-trivial software challenges.
+              I focus on bridging the gap between data analytics and practical software systems: creating full-stack architectures (React, TypeScript, Express, FastAPI), data analysis and anomaly detection workflows (Pandas, Prophet, Scikit-learn), and integrating generative AI models (IBM watsonx.ai) for domain-specific applications.
             </p>
             <p>
-              Rather than viewing AI as a disconnected black box, I approach it from a full-stack software engineering perspective: ensuring models are clean, reproducible, wrapped in fast APIs, and connected to dependable user experiences.
+              I believe in learning by building real, verifiable projects. Every project in my portfolio is backed by actual code, hands-on debugging, and transparent documentation.
             </p>
           </Card>
 
           <Card variant="default" className="p-6 space-y-4">
             <h3 className="text-base font-bold text-white tracking-tight">
-              What I Enjoy Building
+              Core Technical Focus Areas
             </h3>
             <div className="space-y-2">
               <div className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <span><strong>Applied ML & NLP Pipelines:</strong> Benchmark classical models against modern transformers to balance inference speed and predictive accuracy.</span>
+                <span><strong>Full-Stack Web Systems:</strong> Architecting responsive web applications with TypeScript, React, Express, FastAPI, and relational databases (PostgreSQL, SQLite, MySQL).</span>
               </div>
               <div className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <span><strong>Full-Stack Applications:</strong> Building responsive web frontends (React/TypeScript) backed by typed backend APIs and PostgreSQL (e.g., GlobeTrotter).</span>
+                <span><strong>Data Science & Analytics:</strong> Developing exploratory data analysis pipelines, time-series forecasting models, and anomaly detection systems (FinOps).</span>
               </div>
               <div className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <span><strong>Cybersecurity & Defense Tools:</strong> Investigating packet flows, behavioral anomalies, and defense-in-depth web architectures.</span>
+                <span><strong>Intelligent & Decentralized Systems:</strong> Building agentic market intelligence solutions (Krishi Bazaar / IBM watsonx.ai) and smart contract voting systems (SecureVote / Solidity).</span>
               </div>
             </div>
           </Card>
+
+          <div className="pt-2 flex items-center gap-4">
+            <Link to="/projects">
+              <Button size="sm" variant="primary">
+                Explore Projects
+              </Button>
+            </Link>
+            <Link to="/contact">
+              <Button size="sm" variant="outline">
+                Get In Touch
+              </Button>
+            </Link>
+          </div>
         </div>
 
         {/* Right Column: Engineering Principles & Quick Stats */}
@@ -105,29 +118,23 @@ export const AboutPage: React.FC = () => {
             </h3>
             <div className="space-y-2 text-xs text-slate-300 font-mono">
               <div className="flex justify-between py-1 border-b border-slate-800">
-                <span className="text-slate-400">Major:</span>
-                <span>B.Tech Information Technology</span>
-              </div>
-              <div className="flex justify-between py-1 border-b border-slate-800">
-                <span className="text-slate-400">Class Year:</span>
-                <span>Pre-Final Year (2026/27)</span>
+                <span className="text-slate-400">Field:</span>
+                <span>B.Tech IT (Data Science & Analytics)</span>
               </div>
               <div className="flex justify-between py-1 border-b border-slate-800">
                 <span className="text-slate-400">Location:</span>
                 <span>{profileData.location}</span>
               </div>
-              <div className="flex justify-between py-1">
-                <span className="text-slate-400">Availability:</span>
-                <span className="text-emerald-400 font-bold">Summer / Fall 2026 Internships</span>
+              <div className="flex justify-between py-1 border-b border-slate-800">
+                <span className="text-slate-400">Status:</span>
+                <span className="text-emerald-400">{profileData.recruiterSnapshot.status}</span>
               </div>
-            </div>
-
-            <div className="mt-4 pt-4 border-t border-border-dark flex items-center gap-3">
-              <Link to="/projects" className="w-full">
-                <Button size="sm" variant="primary" className="w-full">
-                  Explore Projects
-                </Button>
-              </Link>
+              <div className="flex justify-between py-1">
+                <span className="text-slate-400">GitHub:</span>
+                <a href={profileData.socials.github} target="_blank" rel="noreferrer" className="text-primary-400 hover:underline">
+                  bhavya277
+                </a>
+              </div>
             </div>
           </Card>
         </div>

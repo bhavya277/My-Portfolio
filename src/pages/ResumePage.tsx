@@ -123,19 +123,19 @@ export const ResumePage: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
             <div>
               <span className="font-semibold text-white print:text-black">Languages:</span>{' '}
-              <span className="text-slate-300 font-mono print:text-slate-700">Python, C/C++, TypeScript, JavaScript, SQL</span>
+              <span className="text-slate-300 font-mono print:text-slate-700">TypeScript, Python, JavaScript (ES6+), SQL, Solidity, PHP</span>
             </div>
             <div>
-              <span className="font-semibold text-white print:text-black">AI / Machine Learning:</span>{' '}
-              <span className="text-slate-300 font-mono print:text-slate-700">Scikit-learn, PyTorch basics, NLP, Transformers, Pandas</span>
+              <span className="font-semibold text-white print:text-black">Data Science & AI:</span>{' '}
+              <span className="text-slate-300 font-mono print:text-slate-700">Pandas, NumPy, Scikit-learn, Prophet, Isolation Forest, IBM watsonx.ai</span>
             </div>
             <div>
-              <span className="font-semibold text-white print:text-black">Development:</span>{' '}
-              <span className="text-slate-300 font-mono print:text-slate-700">React, Node.js, Express, PostgreSQL, REST APIs</span>
+              <span className="font-semibold text-white print:text-black">Web & APIs:</span>{' '}
+              <span className="text-slate-300 font-mono print:text-slate-700">React, Node.js, Express, FastAPI, Flask, Prisma ORM, Tailwind CSS</span>
             </div>
             <div>
-              <span className="font-semibold text-white print:text-black">Tools & Systems:</span>{' '}
-              <span className="text-slate-300 font-mono print:text-slate-700">Git, GitHub, Docker basics, Linux CLI, FastAPI</span>
+              <span className="font-semibold text-white print:text-black">Databases & Tools:</span>{' '}
+              <span className="text-slate-300 font-mono print:text-slate-700">PostgreSQL, SQLite, MongoDB, MySQL, Git, GitHub, Hardhat, Docker basics</span>
             </div>
           </div>
         </div>
