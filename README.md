@@ -19,7 +19,6 @@ All portfolio content is separated into clean, structured data files in [`src/da
 - **Achievements & Awards**: [`src/data/achievements.ts`](file:///src/data/achievements.ts)
 - **Certifications**: [`src/data/certifications.ts`](file:///src/data/certifications.ts)
 - **Education & Coursework**: [`src/data/education.ts`](file:///src/data/education.ts)
-- **AI Lab Sandboxes**: [`src/data/lab.ts`](file:///src/data/lab.ts)
 
 ---
 
@@ -29,7 +28,6 @@ All portfolio content is separated into clean, structured data files in [`src/da
 - **Proof of Work Engine**: Replaces arbitrary percentage bars with direct links: `Skill → Evidence → Project → GitHub/Live Demo`.
 - **Deep 10-Part Project Case Studies**: Complete architectural walkthroughs for *GlobeTrotter* and AI/ML pipelines including problem justifications, architecture diagrams, explicit personal contributions, challenges, decisions, and verified results.
 - **Data-Driven 3-Tier Skills Taxonomy**: Categorized into **Core**, **Working With**, and **Exploring** in `src/data/skills.ts`.
-- **Interactive Technical Lab**: Real-time sandboxes (Subword BPE Tokenizer explorer, Neural Activation Function math visualizer, and HTTP Security Header hardening checklist).
 - **Command Palette (`Cmd + K` / `Ctrl + K`)**: Keyboard-driven spotlight search for instant navigation across all pages and projects.
 - **Dedicated Resume Experience**: Responsive interactive resume viewer with print-optimized CSS and instant PDF download triggers.
 - **GitHub Integration with Fallback**: Live sync with graceful offline fallback when rate-limited.

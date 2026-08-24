@@ -18,7 +18,6 @@ import { HackathonsPage } from './pages/HackathonsPage';
 import { AchievementsPage } from './pages/AchievementsPage';
 import { CertificationsPage } from './pages/CertificationsPage';
 import { EducationPage } from './pages/EducationPage';
-import { LabPage } from './pages/LabPage';
 import { ResumePage } from './pages/ResumePage';
 import { ContactPage } from './pages/ContactPage';
 import { NotFoundPage } from './pages/NotFoundPage';
@@ -49,7 +48,6 @@ export function App() {
               <Route path="/achievements" element={<AchievementsPage />} />
               <Route path="/certifications" element={<CertificationsPage />} />
               <Route path="/education" element={<EducationPage />} />
-              <Route path="/lab" element={<LabPage />} />
               <Route path="/resume" element={<ResumePage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="*" element={<NotFoundPage />} />

@@ -49,7 +49,6 @@ export const Navbar: React.FC<NavbarProps> = ({
     { label: 'About', path: '/about' },
     { label: 'Projects', path: '/projects' },
     { label: 'Experience', path: '/experience' },
-    { label: 'Lab', path: '/lab' },
     { label: 'Contact', path: '/contact' },
   ];
 

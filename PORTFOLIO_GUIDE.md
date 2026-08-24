@@ -17,7 +17,6 @@ This guide explains **which file controls which part of your website**, making i
 | **Achievements, Awards & Competition Rankings** | [`src/data/achievements.ts`](file:///src/data/achievements.ts) |
 | **Certifications, Coursework Credentials & Verification Links** | [`src/data/certifications.ts`](file:///src/data/certifications.ts) |
 | **Degree, University, CGPA, and Coursework Subjects** | [`src/data/education.ts`](file:///src/data/education.ts) |
-| **Interactive AI Lab Experiments & Sandboxes** | [`src/data/lab.ts`](file:///src/data/lab.ts) |
 | **Resume PDF File (for 1-click downloads)** | Put `resume.pdf` into [`public/resume.pdf`](file:///public/resume.pdf) |
 
 ---

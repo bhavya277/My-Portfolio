@@ -50,7 +50,6 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
     { label: 'Certifications', path: '/certifications', icon: <Award className="w-4 h-4" /> },
     { label: 'Education & Curriculum', path: '/education', icon: <GraduationCap className="w-4 h-4" /> },
     { label: 'Resume (View & Download)', path: '/resume', icon: <FileText className="w-4 h-4" /> },
-    { label: 'Interactive AI Lab', path: '/lab', icon: <Terminal className="w-4 h-4" /> },
     { label: 'Contact', path: '/contact', icon: <Mail className="w-4 h-4" /> },
   ];
 
