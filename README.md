@@ -1,6 +1,6 @@
 <div align="center">
 
-# Bhavya Modi — Software Engineering & Data Science Portfolio
+# Bhavya Modi — Portfolio
 
 <p align="center">
   <strong>Production-grade, evidence-driven personal portfolio website engineered with modern web technologies.</strong>
