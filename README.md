@@ -44,21 +44,6 @@ Designed with a **recruiter-first, evidence-driven philosophy**, the site priori
 
 ---
 
-## 🚀 Verified Project Showcase
-
-| Project | Domain | Architecture & Technologies | Links |
-| :--- | :--- | :--- | :--- |
-| **🌾 Krishi Bazaar** | AI / Market Intelligence | React, TypeScript, Express.js, IBM watsonx.ai, IBM Granite LLM, Recharts | [GitHub Repository](https://github.com/bhavya277/Krishi-Bazar) |
-| **✈️ GlobeTrotter** | Full-Stack Web | React 18, TypeScript, Express, Prisma ORM, SQLite/PostgreSQL, Tailwind CSS | [GitHub Repository](https://github.com/bhavya277/GlobeTrotter) |
-| **📈 FinOps Dashboard** | Data Science & Forecasting | Python, Flask, Pandas, NumPy, Facebook Prophet, Isolation Forest, React 19 | [GitHub Repository](https://github.com/bhavya277/FinOps) |
-| **🛡️ SecureVote** | Blockchain & Security | Solidity, Hardhat, Ethereum, FastAPI, EasyOCR, PyCryptodome (AES-256), React | [GitHub Repository](https://github.com/bhavya277/blockchain-based-Voting-System) |
-| **👥 HRMS TH** | Full-Stack Web | React, TypeScript, Radix UI, Node.js, Express, MongoDB, jsPDF | [Live Demo](https://hrmsth.vercel.app) &bull; [GitHub](https://github.com/bhavya277/HRMS_TH) |
-| **📦 AssetFlow** | Enterprise Systems | React 19, TypeScript, FastAPI (Python), SQLite/PostgreSQL, JWT RBAC | [GitHub Repository](https://github.com/bhavya277/AssetFlow) |
-| **✨ Particle Gesture Control** | Computer Vision | JavaScript, Three.js, MediaPipe Hands API, WebGL | [Live Demo](https://particle-tracking.vercel.app) &bull; [GitHub](https://github.com/bhavya277/Particle-tracking) |
-| **💰 Expense Manager** | Web Development | PHP 7.4+, MySQL, Apache, Docker, JavaScript, Bootstrap, Chart.js | [Live Demo](https://expensemanager27.great-site.net/) &bull; [GitHub](https://github.com/bhavya277/Expense-Manager) |
-
----
-
 ## 🛠️ Technology Stack
 
 ```
@@ -143,12 +128,6 @@ npm run preview
 4. Framework Preset: **Vite**.
 5. Build Command: `npm run build` | Output Directory: `dist`.
 6. Click **"Deploy"**.
-
----
-
-## 📘 Updating Your Content
-
-To customize your information, simply edit the corresponding file in `src/data/`. Consult the complete **[PORTFOLIO_GUIDE.md](PORTFOLIO_GUIDE.md)** for a full field-by-field reference.
 
 ---
 
