@@ -127,7 +127,7 @@ export const ContactPage: React.FC = () => {
             </h3>
             <div className="space-y-1 text-xs text-slate-300 font-mono">
               <p>📍 Location: {profileData.location}</p>
-              <p>🟢 Availability: Open for 2026 Internships</p>
+              <p>🟢 Availability: Open for Opportunities</p>
               <p>⏱ Typical response: &lt; 24 hours</p>
             </div>
           </Card>

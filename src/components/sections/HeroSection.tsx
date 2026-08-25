@@ -89,7 +89,7 @@ export const HeroSection: React.FC = () => {
                   <span className="w-3 h-3 rounded-full bg-rose-500/80" />
                   <span className="w-3 h-3 rounded-full bg-amber-500/80" />
                   <span className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                  <span className="text-[11px] text-slate-400 ml-2 font-mono">bhavya@engineer: ~</span>
+                  <span className="text-[11px] text-slate-400 ml-2 font-mono">bhavya-modi: ~</span>
                 </div>
                 <Badge variant="outline" size="sm">zsh</Badge>
               </div>
@@ -108,7 +108,7 @@ export const HeroSection: React.FC = () => {
                     <span className="text-primary-400">"degree"</span>: <span className="text-amber-300">"B.Tech Information Technology"</span>,
                   </div>
                   <div>
-                    <span className="text-primary-400">"expected_graduation"</span>: <span className="text-cyan-300">2026</span>,
+                    <span className="text-primary-400">"expected_graduation"</span>: <span className="text-cyan-300">2028</span>,
                   </div>
                   <div>
                     <span className="text-primary-400">"primary_domains"</span>: [
@@ -121,7 +121,7 @@ export const HeroSection: React.FC = () => {
                     ],
                   </div>
                   <div>
-                    <span className="text-primary-400">"seeking"</span>: <span className="text-amber-300">"Internships / High-impact roles"</span>
+                    <span className="text-primary-400">"seeking"</span>: <span className="text-amber-300">"Opportunities / High-impact roles"</span>
                   </div>
                 </div>
 

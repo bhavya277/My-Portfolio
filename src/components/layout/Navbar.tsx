@@ -86,7 +86,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               {profileData.name}
             </span>
             <span className="text-[10px] font-mono text-slate-400 leading-tight">
-              AI/ML &bull; Software
+              Data Science &bull; AI/ML
             </span>
           </div>
         </Link>

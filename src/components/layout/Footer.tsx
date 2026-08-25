@@ -88,7 +88,6 @@ export const Footer: React.FC = () => {
               <li>Machine Learning & NLP</li>
               <li>Generative AI Pipelines</li>
               <li>Full-Stack Web Systems</li>
-              <li>Cybersecurity Defense</li>
               <li>Data Science & EDA</li>
             </ul>
           </div>
@@ -98,7 +97,7 @@ export const Footer: React.FC = () => {
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <p>© {currentYear} {profileData.name}. All rights reserved.</p>
           <div className="flex items-center gap-4 text-[11px] font-mono">
-            <span>Built with React &bull; TypeScript &bull; Tailwind</span>
+            <span>Built and designed by {profileData.name}</span>
           </div>
         </div>
       </div>
