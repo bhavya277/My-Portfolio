@@ -29,3 +29,7 @@ dist-ssr
 
 # Antigravity artifacts/system files
 .gemini/
+
+# Archives
+*.zip
+

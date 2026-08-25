@@ -117,10 +117,17 @@ export interface CertificationItem {
   id: string;
   title: string;
   issuer: string;
-  issueDate: string;
-  credentialId?: string;
-  verificationUrl?: string;
+  issueDate?: string | null;
+  credentialId?: string | null;
+  verificationUrl?: string | null;
+  category: string;
+  image: string;
   skills: string[];
+  featured?: boolean;
+  certificateType?: string;
+  programName?: string;
+  recipientName?: string | null;
+  platform?: string | null;
 }
 
 export interface EducationItem {
