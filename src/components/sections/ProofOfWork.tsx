@@ -86,7 +86,7 @@ export const ProofOfWork: React.FC = () => {
                   <h4 className="text-sm font-semibold text-primary-300">
                     {item.projectTitle}
                   </h4>
-                  
+
                   <div className="mt-2 space-y-1">
                     {item.deliverables.map((deliv, dIdx) => (
                       <div key={dIdx} className="flex items-start gap-1.5 text-xs text-slate-300">

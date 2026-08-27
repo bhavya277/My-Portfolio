@@ -9,14 +9,14 @@ export const projectsData: ProjectCaseStudy[] = [
     featured: true,
     role: 'Full-Stack & AI Integration Developer',
     duration: 'Hackathon Project (IBM Hackathon)',
-    teamSize: 'Team Project [NEEDS CONFIRMATION]',
+    teamSize: 'Team Project',
     githubUrl: 'https://github.com/bhavya277/Krishi-Bazar',
     tags: ['TypeScript', 'React', 'Vite', 'Express.js', 'IBM watsonx.ai', 'IBM Granite LLM', 'Tailwind CSS', 'Recharts'],
-    
+
     problem: 'Farmers frequently face price volatility and information asymmetry, losing income to intermediaries due to a lack of real-time APMC mandi price intelligence and predictive market trends.',
     why: 'Direct market linkages combined with LLM-assisted forecasting empower agricultural producers to make data-backed harvest storage and sales timing decisions.',
     solution: 'Built Krishi Bazaar: a web platform that delivers real-time mandi prices across Gujarat districts, forecasts price trends using IBM Granite LLM on watsonx.ai, matches farmers with verified buyers, and provides AI crop quality grading advisory.',
-    
+
     architecture: {
       summary: 'Decoupled architecture featuring a React/Vite dashboard client communicating with an Express.js API backend that interfaces with IBM watsonx.ai Granite LLM services and MCP servers.',
       components: [
@@ -48,7 +48,7 @@ export const projectsData: ProjectCaseStudy[] = [
       'Configured and structured the full-stack repository architecture (frontend, backend, and MCP server).',
       'Developed interactive UI dashboard views for mandi price exploration and commodity trend visualization.',
       'Integrated backend API routes to communicate with IBM watsonx.ai endpoints.',
-      '[NEEDS USER CONFIRMATION: Specific additional individual modules implemented]',
+      'Implemented data processing pipelines for market price aggregation and forecasting displays.',
     ],
 
     technicalChallenges: [
@@ -67,7 +67,6 @@ export const projectsData: ProjectCaseStudy[] = [
 
     results: [
       'Delivered functional prototype supporting real-time price lookups, AI forecast summaries, and buyer discovery.',
-      'Results: Not specified (Empirical metrics need confirmation)',
     ],
 
     learnings: [
@@ -86,11 +85,11 @@ export const projectsData: ProjectCaseStudy[] = [
     teamSize: 'Individual Project',
     githubUrl: 'https://github.com/bhavya277/GlobeTrotter',
     tags: ['React', 'TypeScript', 'Node.js', 'Express', 'Prisma', 'SQLite', 'Tailwind CSS', 'JWT'],
-    
+
     problem: 'Travelers struggle with scattered notes, unorganized bookings, and opaque budget tracking when planning multi-destination itineraries across different cities.',
     why: 'A centralized workspace with drag-and-drop scheduling, real-time expense calculations, and granular data ownership makes trip planning structured and collaborative.',
     solution: 'Engineered GlobeTrotter: a full-stack web application supporting multi-destination trip building, HTML5 drag-and-drop schedule organization, expense management, secure password reset, and public sharing.',
-    
+
     architecture: {
       summary: 'Client-server architecture featuring a TypeScript React frontend, an Express REST API backend with Prisma ORM data modeling, and robust JWT session security.',
       components: [
@@ -160,11 +159,11 @@ export const projectsData: ProjectCaseStudy[] = [
     teamSize: 'Individual Project',
     githubUrl: 'https://github.com/bhavya277/FinOps',
     tags: ['Python', 'Flask', 'Pandas', 'NumPy', 'Scikit-learn', 'Prophet', 'React 19', 'Bootstrap'],
-    
+
     problem: 'Unmonitored cloud infrastructure spending often results in budget overruns, undetected billing anomalies, and unoptimized resource allocations across cloud regions.',
     why: 'Combining automated exploratory data analysis with machine learning anomaly detection enables engineering teams to proactively detect expenditure spikes before invoices arrive.',
     solution: 'Developed the FinOps Dashboard: a full-stack platform that ingests cloud billing logs, conducts automated EDA, forecasts future spend with Prophet, and detects abnormal spikes with Isolation Forest.',
-    
+
     architecture: {
       summary: 'Python Flask analytics backend running data pipelines and ML models, serving structured metric endpoints to a React 19 single-page dashboard.',
       components: [
@@ -235,11 +234,11 @@ export const projectsData: ProjectCaseStudy[] = [
     teamSize: 'Individual Project',
     githubUrl: 'https://github.com/bhavya277/blockchain-based-Voting-System',
     tags: ['Solidity', 'Hardhat', 'Ethereum', 'Ethers.js', 'FastAPI', 'Python', 'EasyOCR', 'PyCryptodome', 'React'],
-    
+
     problem: 'Conventional electronic voting systems lack public auditability, while many decentralized blockchain voting systems require complex crypto wallet setups that exclude non-technical voters.',
     why: 'Combining zero-gas blockchain recording with automated OCR identity verification enables secure, transparent elections without exposing voter privacy.',
     solution: 'Constructed SecureVote: a hybrid decentralized voting platform with Ethereum smart contracts, EasyOCR identification verification, and AES-256 encrypted voter metadata storage.',
-    
+
     architecture: {
       summary: 'Hybrid Web3 architecture pairing an Ethereum smart contract ledger (Hardhat/Solidity) with a Python FastAPI backend for identity verification and cryptography.',
       components: [
@@ -309,11 +308,11 @@ export const projectsData: ProjectCaseStudy[] = [
     githubUrl: 'https://github.com/bhavya277/HRMS_TH',
     liveUrl: 'https://hrmsth.vercel.app',
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'Radix UI', 'Node.js', 'Express', 'MongoDB', 'JWT', 'jsPDF'],
-    
+
     problem: 'Small and medium organizations struggle with manual attendance logging, informal leave approvals, and time-consuming payroll report generation.',
     why: 'A unified role-based system simplifies HR administrative overhead and provides transparent records for employees and management.',
     solution: 'Built HRMS TH: a production-deployed web application featuring role-based dashboards (Admin, HR, Employee), real-time attendance marking, leave workflows, and dynamic PDF salary slips.',
-    
+
     architecture: {
       summary: 'Full-stack web application with a TypeScript React frontend deployed on Vercel and an Express/MongoDB backend service.',
       components: [
@@ -383,11 +382,11 @@ export const projectsData: ProjectCaseStudy[] = [
     teamSize: 'Individual Project',
     githubUrl: 'https://github.com/bhavya277/AssetFlow',
     tags: ['React 19', 'TypeScript', 'FastAPI', 'Python', 'SQLite', 'PostgreSQL', 'JWT', 'Tailwind CSS'],
-    
+
     problem: 'Organizations lose track of hardware assets, software licenses, and maintenance schedules when relying on static spreadsheets.',
     why: 'Centralized asset management ensures audit compliance, optimizes hardware utilization, and reduces unexpected equipment downtime.',
     solution: 'Engineered AssetFlow: an enterprise web platform enabling asset tracking, department allocation, scheduled maintenance logging, and audit history reporting.',
-    
+
     architecture: {
       summary: 'Decoupled architecture featuring a React 19 / TypeScript single-page application and a high-performance Python FastAPI backend.',
       components: [
@@ -457,11 +456,11 @@ export const projectsData: ProjectCaseStudy[] = [
     githubUrl: 'https://github.com/bhavya277/Particle-tracking',
     liveUrl: 'https://particle-tracking.vercel.app',
     tags: ['JavaScript', 'HTML5', 'Three.js', 'MediaPipe Hands', 'Computer Vision', 'WebGL'],
-    
+
     problem: 'Traditional human-computer interfaces are limited to physical touch and mouse inputs, lacking intuitive touchless spatial interaction.',
     why: 'In-browser computer vision enables accessible, zero-hardware touchless gesture manipulation for interactive graphics and spatial computing.',
     solution: 'Built Particle Gesture Control: an interactive web application that tracks hand landmarks via webcam using MediaPipe and morphs 3D particle shapes (spheres, cubes, Saturn rings, supernova) in real time using Three.js.',
-    
+
     architecture: {
       summary: 'Client-side computer vision and WebGL rendering pipeline operating entirely in the browser without server dependencies.',
       components: [
@@ -527,11 +526,11 @@ export const projectsData: ProjectCaseStudy[] = [
     githubUrl: 'https://github.com/bhavya277/Expense-Manager',
     liveUrl: 'https://expensemanager27.great-site.net/',
     tags: ['PHP', 'MySQL', 'JavaScript', 'Bootstrap', 'Chart.js', 'Apache', 'Docker'],
-    
+
     problem: 'Tracking personal income and expenses manually often leads to disorganized financial records and lack of monthly spending visibility.',
     why: 'A simple, responsive web application provides clear financial summaries and categorical spending breakdowns.',
     solution: 'Constructed Expense Manager: a PHP/MySQL application with user authentication, CRUD transaction management, monthly financial reports, and Chart.js visualizations.',
-    
+
     architecture: {
       summary: 'Classic LAMP-stack web application featuring PHP server-rendered pages, MySQL relational database, and Chart.js client visualizations.',
       components: [

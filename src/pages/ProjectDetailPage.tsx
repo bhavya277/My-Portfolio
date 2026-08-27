@@ -239,8 +239,40 @@ export const ProjectDetailPage: React.FC = () => {
           </section>
         </div>
 
+        {/* Related Projects */}
+        <section className="pt-6 border-t border-border-dark space-y-4">
+          <h2 className="text-base font-bold text-white">Related Case Studies</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {projectsData
+              .filter((p) => p.id !== project.id)
+              .slice(0, 2)
+              .map((relProject) => (
+                <Link
+                  key={relProject.id}
+                  to={`/projects/${relProject.id}`}
+                  className="p-4 rounded-xl bg-background-card border border-border-dark hover:border-border-darkHover hover:bg-background-cardHover transition-all group"
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <Badge variant="primary" size="sm">
+                      {relProject.category}
+                    </Badge>
+                    <span className="text-[10px] font-mono text-primary-400 group-hover:translate-x-0.5 transition-transform">
+                      View Case Study &rarr;
+                    </span>
+                  </div>
+                  <h3 className="text-sm font-bold text-white group-hover:text-primary-300 transition-colors">
+                    {relProject.title.split('—')[0]}
+                  </h3>
+                  <p className="text-xs text-slate-400 mt-1 line-clamp-2">
+                    {relProject.tagline}
+                  </p>
+                </Link>
+              ))}
+          </div>
+        </section>
+
         {/* Bottom Case Study Navigation */}
-        <div className="pt-8 border-t border-border-dark flex items-center justify-between">
+        <div className="pt-6 border-t border-border-dark flex items-center justify-between">
           <Link to="/projects">
             <Button variant="outline" size="sm" icon={<ArrowLeft className="w-4 h-4" />}>
               All Projects

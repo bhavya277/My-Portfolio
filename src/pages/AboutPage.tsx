@@ -25,7 +25,7 @@ export const AboutPage: React.FC = () => {
     },
     {
       title: 'Build For Real Utility',
-      description: 'Whether it is an agricultural market platform like Krishi Bazaar, a full-stack platform like GlobeTrotter, or a cloud cost analytics suite like FinOps, the objective is measurable utility.',
+      description: 'Whether it is an agricultural market platform like Krishi Bazaar, an enterprise asset system like AssetFlow, or a cloud cost analytics suite like FinOps, the objective is measurable utility.',
       icon: <Brain className="w-4 h-4 text-amber-400" />,
     },
   ];
