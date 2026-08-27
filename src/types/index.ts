@@ -73,6 +73,20 @@ export interface LearningMilestone {
   skills: string[];
 }
 
+export interface LearningStageItem {
+  id: string;
+  number: string;
+  title: string;
+  tagline: string;
+  shortDescription: string;
+  narrative: string;
+  topics: string[];
+  technologies: string[];
+  relatedProjectIds: string[];
+  badge: string;
+  targetDirection?: string;
+}
+
 export interface ExperienceItem {
   id: string;
   organization: string;

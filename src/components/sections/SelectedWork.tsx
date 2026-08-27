@@ -8,7 +8,7 @@ import { Button } from '../ui/Button';
 import { SectionHeader } from '../ui/SectionHeader';
 
 export const SelectedWork: React.FC = () => {
-  const selectedProjects = projectsData.slice(0, 3);
+  const selectedProjects = projectsData.slice(1, 4);
 
   return (
     <section className="py-16 md:py-24 border-b border-border-dark">

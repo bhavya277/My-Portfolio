@@ -8,7 +8,7 @@ export const EngineeringSnapshot: React.FC = () => {
     {
       category: 'Languages',
       icon: <Code className="w-4 h-4 text-primary-400" />,
-      items: ['TypeScript', 'Python', 'JavaScript (ES6+)', 'SQL', 'Solidity', 'PHP'],
+      items: ['TypeScript', 'Python', 'JavaScript (ES6+)', 'SQL', 'Solidity', 'PHP', 'C', 'C++', 'JAVA'],
     },
     {
       category: 'Data Science & AI',
