@@ -20,9 +20,11 @@ export const EducationPage: React.FC = () => {
             <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pb-4 border-b border-border-dark">
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <Badge variant="primary" size="sm">
-                    {edu.status}
-                  </Badge>
+                  {edu.status && (
+                    <Badge variant="primary" size="sm">
+                      {edu.status}
+                    </Badge>
+                  )}
                   <span className="text-xs font-mono text-slate-400 flex items-center gap-1">
                     <Calendar className="w-3.5 h-3.5" /> {edu.period}
                   </span>
@@ -32,10 +34,14 @@ export const EducationPage: React.FC = () => {
                 </h3>
                 <div className="text-xs font-mono text-primary-400 flex items-center gap-2 mt-0.5">
                   <span>{edu.institution}</span>
-                  <span>&bull;</span>
-                  <span className="text-slate-400 flex items-center gap-1">
-                    <MapPin className="w-3 h-3" /> {edu.location}
-                  </span>
+                  {edu.location && (
+                    <>
+                      <span>&bull;</span>
+                      <span className="text-slate-400 flex items-center gap-1">
+                        <MapPin className="w-3 h-3" /> {edu.location}
+                      </span>
+                    </>
+                  )}
                 </div>
               </div>
 

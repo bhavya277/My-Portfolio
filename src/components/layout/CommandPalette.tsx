@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search, Home, User, Code2, Award, GraduationCap, FileText, Mail, Terminal } from 'lucide-react';
 import { projectsData } from '../../data/projects';
@@ -18,6 +18,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
 }) => {
   const [query, setQuery] = useState('');
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const navigate = useNavigate();
 
   const staticNav = [
@@ -56,7 +57,18 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
 
   useEffect(() => {
     setSelectedIndex(0);
-  }, [query]);
+    itemRefs.current = [];
+  }, [query, isOpen]);
+
+  // Auto-scroll the active highlighted item into view when navigating via arrow keys
+  useEffect(() => {
+    if (isOpen && itemRefs.current[selectedIndex]) {
+      itemRefs.current[selectedIndex]?.scrollIntoView({
+        block: 'nearest',
+        behavior: 'smooth',
+      });
+    }
+  }, [selectedIndex, isOpen]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -136,12 +148,13 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
         </div>
 
         {/* Results List */}
-        <div className="max-h-80 overflow-y-auto p-2 space-y-1 text-sm">
+        <div className="max-h-80 overflow-y-auto p-2 space-y-1 text-sm scroll-smooth">
           {/* Quick Actions */}
           <div className="px-2 py-1 text-[11px] font-mono text-slate-400 uppercase tracking-wider">
             Quick Actions
           </div>
           <button
+            ref={(el) => { itemRefs.current[0] = el; }}
             onClick={() => {
               onClose();
               onOpenRecruiterView();
@@ -168,6 +181,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                 return (
                   <button
                     key={idx}
+                    ref={(el) => { itemRefs.current[itemIndex] = el; }}
                     onClick={() => handleSelectRoute(item.path)}
                     className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-left transition-colors ${
                       selectedIndex === itemIndex ? 'bg-primary-600/20 text-white border border-primary-500/30' : 'text-slate-300 hover:bg-slate-800 hover:text-white'
@@ -192,6 +206,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                 return (
                   <button
                     key={proj.id}
+                    ref={(el) => { itemRefs.current[itemIndex] = el; }}
                     onClick={() => handleSelectRoute(`/projects/${proj.id}`)}
                     className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-left transition-colors ${
                       selectedIndex === itemIndex ? 'bg-primary-600/20 text-white border border-primary-500/30' : 'text-slate-300 hover:bg-slate-800 hover:text-white'
