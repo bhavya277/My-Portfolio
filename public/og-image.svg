@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030712" />
+      <stop offset="50%" stop-color="#0b0f19" />
+      <stop offset="100%" stop-color="#030712" />
+    </linearGradient>
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect x="20" y="20" width="1160" height="590" rx="20" fill="none" stroke="#1e293b" stroke-width="2" />
+
+  <!-- Badge -->
+  <rect x="80" y="100" width="180" height="36" rx="8" fill="#1e293b" stroke="#334155" />
+  <text x="170" y="124" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600" fill="#38bdf8" text-anchor="middle" letter-spacing="1">PORTFOLIO // 2026</text>
+
+  <!-- Heading -->
+  <text x="80" y="220" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="64" font-weight="800" fill="#ffffff" letter-spacing="-1">Bhavya Modi</text>
+
+  <!-- Subtitle -->
+  <text x="80" y="290" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="32" font-weight="600" fill="url(#primaryGrad)">Data Science &amp; AI/ML &bull; Software Engineering</text>
+
+  <!-- Description -->
+  <text x="80" y="360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="400" fill="#94a3b8">B.Tech IT Student building intelligent, data-driven systems</text>
+  <text x="80" y="396" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="400" fill="#94a3b8">across Machine Learning, NLP, Deep Learning, and Web Platforms.</text>
+
+  <!-- Bottom Details -->
+  <line x1="80" y1="470" x2="1120" y2="470" stroke="#1e293b" stroke-width="2" />
+  <text x="80" y="530" font-family="'JetBrains Mono', monospace, sans-serif" font-size="18" font-weight="600" fill="#38bdf8">github.com/bhavya277</text>
+  <text x="600" y="530" font-family="'JetBrains Mono', monospace, sans-serif" font-size="18" font-weight="600" fill="#94a3b8" text-anchor="middle">Birla Vishvakarma Mahavidyalaya</text>
+  <text x="1120" y="530" font-family="'JetBrains Mono', monospace, sans-serif" font-size="18" font-weight="600" fill="#10b981" text-anchor="end">Expected Grad: 2028</text>
+</svg>

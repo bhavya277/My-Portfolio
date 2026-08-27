@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail, Download } from 'lucide-react';
 import { profileData } from '../../data/profile';
 import { Button } from '../ui/Button';
 import { Badge } from '../ui/Badge';
@@ -45,7 +45,7 @@ export const HeroSection: React.FC = () => {
                   View Projects
                 </Button>
               </Link>
-              <a href={profileData.resumeUrl} download>
+              <a href="/resume.pdf" download="Bhavya-Modi-Resume.pdf">
                 <Button size="md" variant="secondary" icon={<Download className="w-4 h-4" />}>
                   Download Resume
                 </Button>

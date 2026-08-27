@@ -36,7 +36,13 @@ export const RecruiterViewModal: React.FC<RecruiterViewModalProps> = ({ isOpen, 
   );
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-in fade-in duration-200">
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-in fade-in duration-200"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Recruiter quick view summary"
+      onClick={onClose}
+    >
       <div
         className="relative w-full max-w-2xl bg-background-card border border-border-dark rounded-2xl shadow-2xl p-6 md:p-8 max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
@@ -160,8 +166,8 @@ export const RecruiterViewModal: React.FC<RecruiterViewModalProps> = ({ isOpen, 
         <div className="pt-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-2 w-full sm:w-auto">
             <a
-              href={profileData.resumeUrl}
-              download
+              href="/resume.pdf"
+              download="Bhavya-Modi-Resume.pdf"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-primary-600 hover:bg-primary-500 rounded-lg transition-colors"
             >
               <Download className="w-3.5 h-3.5" /> Download Resume (PDF)

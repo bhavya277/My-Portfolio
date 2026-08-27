@@ -155,12 +155,40 @@ export const useGitHubData = (username: string = 'bhavya277'): GitHubProfileStat
 
         if (isMounted) {
           const nonForked = reposData.filter((r: any) => !r.fork);
+          
+          // Calculate dynamic language distribution from live repositories
+          const langCount: { [key: string]: number } = {};
+          nonForked.forEach((repo: any) => {
+            if (repo.language) {
+              langCount[repo.language] = (langCount[repo.language] || 0) + 1;
+            }
+          });
+          const totalLangs = Object.values(langCount).reduce((a, b) => a + b, 0);
+          const langColors: { [key: string]: string } = {
+            TypeScript: '#3178C6',
+            Python: '#3572A5',
+            JavaScript: '#F7DF1E',
+            PHP: '#4F5D95',
+            Solidity: '#AA6746',
+            HTML: '#E34F26',
+            CSS: '#563D7C',
+          };
+          const calculatedLanguages = totalLangs > 0
+            ? Object.entries(langCount)
+                .map(([name, count]) => ({
+                  name,
+                  percentage: Math.round((count / totalLangs) * 100),
+                  color: langColors[name] || '#8B949E',
+                }))
+                .sort((a, b) => b.percentage - a.percentage)
+            : FALLBACK_LANGUAGES;
+
           setData({
-            public_repos: userData.public_repos || 9,
-            followers: userData.followers || 1,
-            following: userData.following || 3,
+            public_repos: userData.public_repos || 8,
+            followers: userData.followers || 0,
+            following: userData.following || 0,
             topRepos: nonForked.length > 0 ? nonForked : FALLBACK_REPOS,
-            languages: FALLBACK_LANGUAGES,
+            languages: calculatedLanguages,
             isLoading: false,
             isError: false,
           });

@@ -23,7 +23,7 @@ export const ContactPage: React.FC = () => {
     setTimeout(() => setEmailCopied(false), 2000);
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       setErrorMessage('Please fill in all required fields.');
@@ -41,10 +41,18 @@ export const ContactPage: React.FC = () => {
     setFormStatus('loading');
     setErrorMessage('');
 
+    // Open native mail client with formatted subject and body
+    const subject = encodeURIComponent(formData.subject.trim() || `Portfolio Inquiry from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    const mailtoUrl = `mailto:${profileData.email}?subject=${subject}&body=${body}`;
+
+    window.location.href = mailtoUrl;
+
     setTimeout(() => {
       setFormStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 1200);
+    }, 500);
   };
 
   return (
@@ -145,17 +153,22 @@ export const ContactPage: React.FC = () => {
                 <div className="w-10 h-10 rounded-full bg-emerald-900/50 text-emerald-400 mx-auto flex items-center justify-center">
                   <CheckCircle2 className="w-6 h-6" />
                 </div>
-                <h4 className="text-base font-bold text-white">Message Sent Successfully!</h4>
+                <h4 className="text-base font-bold text-white">Email Client Launched!</h4>
                 <p className="text-xs text-slate-300 max-w-sm mx-auto">
-                  Thank you for reaching out. Bhavya will review your message and reply promptly.
+                  Your message has been formatted and opened in your email application to send directly to <strong className="text-primary-300">{profileData.email}</strong>.
                 </p>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  onClick={() => setFormStatus('idle')}
-                >
-                  Send Another Message
-                </Button>
+                <div className="pt-2 flex justify-center gap-3">
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    onClick={() => {
+                      setFormStatus('idle');
+                      setFormData({ name: '', email: '', subject: '', message: '' });
+                    }}
+                  >
+                    Compose Another Message
+                  </Button>
+                </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4 text-xs">

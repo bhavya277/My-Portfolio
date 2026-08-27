@@ -40,6 +40,20 @@ export const ProjectDetailPage: React.FC = () => {
     );
   }
 
+  // Calculate intelligent relevance score based on shared category and technology tags
+  const relatedProjects = projectsData
+    .filter((p) => p.id !== project.id)
+    .map((p) => {
+      let score = 0;
+      if (p.category === project.category) score += 3;
+      const sharedTags = p.tags.filter((t) => project.tags.includes(t));
+      score += sharedTags.length;
+      return { project: p, score };
+    })
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 2)
+    .map((item) => item.project);
+
   return (
     <div className="pt-28 pb-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Top Back Navigation */}
@@ -243,10 +257,7 @@ export const ProjectDetailPage: React.FC = () => {
         <section className="pt-6 border-t border-border-dark space-y-4">
           <h2 className="text-base font-bold text-white">Related Case Studies</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {projectsData
-              .filter((p) => p.id !== project.id)
-              .slice(0, 2)
-              .map((relProject) => (
+            {relatedProjects.map((relProject) => (
                 <Link
                   key={relProject.id}
                   to={`/projects/${relProject.id}`}
