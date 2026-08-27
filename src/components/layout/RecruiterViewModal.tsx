@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { X, Download, Mail, Github, Linkedin, Briefcase, GraduationCap, Code2, ArrowUpRight } from 'lucide-react';
 import { profileData } from '../../data/profile';
 import { projectsData } from '../../data/projects';
@@ -11,6 +11,24 @@ interface RecruiterViewModalProps {
 }
 
 export const RecruiterViewModal: React.FC<RecruiterViewModalProps> = ({ isOpen, onClose }) => {
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const topProjects = projectsData.filter((p) =>

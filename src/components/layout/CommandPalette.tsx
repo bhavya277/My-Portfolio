@@ -5,12 +5,14 @@ import { projectsData } from '../../data/projects';
 
 interface CommandPaletteProps {
   isOpen: boolean;
+  onOpen: () => void;
   onClose: () => void;
   onOpenRecruiterView: () => void;
 }
 
 export const CommandPalette: React.FC<CommandPaletteProps> = ({
   isOpen,
+  onOpen,
   onClose,
   onOpenRecruiterView,
 }) => {
@@ -19,13 +21,13 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault();
         if (isOpen) {
           onClose();
         } else {
-          // Open
           setQuery('');
+          onOpen();
         }
       }
       if (e.key === 'Escape' && isOpen) {
@@ -35,7 +37,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, onClose]);
+  }, [isOpen, onOpen, onClose]);
 
   if (!isOpen) return null;
 

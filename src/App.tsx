@@ -55,6 +55,7 @@ export function App() {
           {/* Global Modals */}
           <CommandPalette
             isOpen={isCommandPaletteOpen}
+            onOpen={() => setIsCommandPaletteOpen(true)}
             onClose={() => setIsCommandPaletteOpen(false)}
             onOpenRecruiterView={() => setIsRecruiterViewOpen(true)}
           />
