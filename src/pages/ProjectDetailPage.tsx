@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { projectsData } from '../data/projects';
+import { useDynamicProjects } from '../hooks/useDynamicProjects';
 import { Card } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
 import { Button } from '../components/ui/Button';
@@ -21,8 +21,9 @@ import {
 
 export const ProjectDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
+  const { projects } = useDynamicProjects();
 
-  const project = projectsData.find((p) => p.id === id);
+  const project = projects.find((p) => p.id.toLowerCase() === id?.toLowerCase());
 
   if (!project) {
     return (
@@ -41,7 +42,7 @@ export const ProjectDetailPage: React.FC = () => {
   }
 
   // Calculate intelligent relevance score based on shared category and technology tags
-  const relatedProjects = projectsData
+  const relatedProjects = projects
     .filter((p) => p.id !== project.id)
     .map((p) => {
       let score = 0;

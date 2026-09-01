@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { X, Download, Mail, Github, Linkedin, Briefcase, GraduationCap, Code2, ArrowUpRight } from 'lucide-react';
 import { profileData } from '../../data/profile';
-import { projectsData } from '../../data/projects';
+import { useDynamicProjects } from '../../hooks/useDynamicProjects';
 import { Badge } from '../ui/Badge';
 import { Link } from 'react-router-dom';
 
@@ -11,6 +11,8 @@ interface RecruiterViewModalProps {
 }
 
 export const RecruiterViewModal: React.FC<RecruiterViewModalProps> = ({ isOpen, onClose }) => {
+  const { projects } = useDynamicProjects();
+
   useEffect(() => {
     if (!isOpen) return;
 
@@ -31,7 +33,7 @@ export const RecruiterViewModal: React.FC<RecruiterViewModalProps> = ({ isOpen, 
 
   if (!isOpen) return null;
 
-  const topProjects = projectsData.filter((p) =>
+  const topProjects = projects.filter((p) =>
     profileData.recruiterSnapshot.topProjectIds.includes(p.id)
   );
 

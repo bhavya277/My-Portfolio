@@ -13,8 +13,8 @@ export const skillsData: SkillItem[] = [
     name: 'Python',
     category: 'Languages',
     level: 'core',
-    proofOfWorkProjectIds: ['finops', 'assetflow', 'secure-vote'],
-    topics: ['Data Analysis (Pandas/NumPy)', 'Machine Learning', 'FastAPI & Flask APIs', 'Automation Scripting'],
+    proofOfWorkProjectIds: ['ml-model-for-athletes', 'finops', 'assetflow', 'secure-vote'],
+    topics: ['Data Analysis (Pandas/Polars)', 'Machine Learning Pipelines', 'FastAPI & Flask APIs', 'Automation Scripting'],
   },
   {
     name: 'JavaScript (ES6+)',
@@ -114,24 +114,31 @@ export const skillsData: SkillItem[] = [
 
   // Data Science, ML & Tools
   {
-    name: 'Pandas & NumPy',
+    name: 'Pandas, NumPy & Polars',
     category: 'AI & Machine Learning',
     level: 'core',
-    proofOfWorkProjectIds: ['finops'],
-    topics: ['Data Wrangling', 'Tabular Transformations', 'Statistical Aggregation', 'Imputation'],
+    proofOfWorkProjectIds: ['ml-model-for-athletes', 'finops'],
+    topics: ['High-Throughput Vectorization', 'Tabular Transformations', 'ACWR Workload Metrics', 'Fold-Local Imputation'],
+  },
+  {
+    name: 'CatBoost, LightGBM & Ensemble Modeling',
+    category: 'AI & Machine Learning',
+    level: 'core',
+    proofOfWorkProjectIds: ['ml-model-for-athletes'],
+    topics: ['Multi-Target Weighted Ensembles', 'Gradient Boosted Trees', 'Stratified Cross-Validation', 'Leak-Free Feature Pipelines'],
   },
   {
     name: 'Scikit-learn & Prophet',
     category: 'AI & Machine Learning',
     level: 'working-with',
-    proofOfWorkProjectIds: ['finops'],
-    topics: ['Anomaly Detection (Isolation Forest)', 'Time-Series Forecasting', 'Model Evaluation'],
+    proofOfWorkProjectIds: ['ml-model-for-athletes', 'finops'],
+    topics: ['Anomaly Detection (Isolation Forest)', 'Time-Series Forecasting', 'StratifiedKFold', 'Threshold Tuning'],
   },
   {
     name: 'Git & GitHub',
     category: 'Databases & Tools',
     level: 'core',
-    proofOfWorkProjectIds: ['krishi-bazar', 'globetrotter', 'finops', 'secure-vote'],
+    proofOfWorkProjectIds: ['ml-model-for-athletes', 'krishi-bazar', 'globetrotter', 'finops', 'secure-vote'],
     topics: ['Version Control', 'Branch Workflows', 'Commit Discipline', 'Open-Source Maintenance'],
   },
   {
@@ -162,7 +169,7 @@ export const areasExploring: AreaExploring[] = [
     title: 'Data Science & Applied Analytics',
     description: 'Working with tabular datasets, time-series forecasting, statistical profiling, and anomaly detection algorithms.',
     status: 'Active Learning & Building',
-    technologies: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'Prophet'],
+    technologies: ['Python', 'Polars', 'Pandas', 'CatBoost', 'LightGBM', 'Scikit-learn', 'Prophet'],
   },
   {
     title: 'Full-Stack Software Engineering',
@@ -200,8 +207,8 @@ export const learningJourney: LearningMilestone[] = [
   {
     year: '2026',
     title: 'Applied AI & Advanced Engineering',
-    description: 'Developing AI-integrated market solutions, agentic workflows with IBM watsonx.ai, and preparing for professional engineering opportunities.',
-    skills: ['IBM watsonx.ai', 'Granite LLM', 'Prisma ORM', 'Machine Learning', 'System Design'],
+    description: 'Developing AI-integrated market solutions, multimodal athlete injury predictive modeling, and agentic workflows with IBM watsonx.ai.',
+    skills: ['CatBoost & LightGBM', 'Polars & Vectorization', 'IBM watsonx.ai', 'Granite LLM', 'Prisma ORM', 'Machine Learning'],
   },
   {
     year: 'Next',

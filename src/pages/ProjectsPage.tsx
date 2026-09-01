@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { projectsData } from '../data/projects';
+import { useDynamicProjects } from '../hooks/useDynamicProjects';
 import { ProjectCategory } from '../types';
 import { SectionHeader } from '../components/ui/SectionHeader';
 import { Card } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
-import { ArrowRight, Github, ExternalLink, Search, Sparkles } from 'lucide-react';
+import { ArrowRight, Github, ExternalLink, Search, Sparkles, RefreshCw } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const ProjectsPage: React.FC = () => {
+  const { projects, totalCount, isLoading } = useDynamicProjects();
   const [selectedCategory, setSelectedCategory] = useState<ProjectCategory>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -20,7 +21,7 @@ export const ProjectsPage: React.FC = () => {
     'CYBERSECURITY',
   ];
 
-  const filteredProjects = projectsData.filter((project) => {
+  const filteredProjects = projects.filter((project) => {
     const matchesCategory =
       selectedCategory === 'ALL' || project.category === selectedCategory;
     const matchesSearch =
@@ -32,29 +33,48 @@ export const ProjectsPage: React.FC = () => {
 
   return (
     <div className="pt-28 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <SectionHeader
-        label="ENGINEERING PORTFOLIO"
-        title="Projects & Case Studies"
-        description="Comprehensive technical showcases detailing problem formulation, system architectures, explicit personal contributions, and empirical results."
-      />
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-2">
+        <SectionHeader
+          label="ENGINEERING PORTFOLIO"
+          title="Projects & Case Studies"
+          description="Comprehensive technical showcases detailing problem formulation, system architectures, explicit personal contributions, and empirical results."
+          className="mb-0"
+        />
+
+        {/* Live GitHub Sync Status Indicator */}
+        <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-300 self-start md:self-auto">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <Github className="w-3.5 h-3.5 text-slate-400" />
+          <span>Live GitHub Sync: {totalCount} Repositories</span>
+          {isLoading && <RefreshCw className="w-3 h-3 text-primary-400 animate-spin ml-1" />}
+        </div>
+      </div>
 
       {/* Controls Bar: Category Filters & Search */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
         {/* Category Pills */}
         <div className="flex flex-wrap gap-1.5">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-colors ${
-                selectedCategory === cat
-                  ? 'bg-primary-600 text-white shadow-sm'
-                  : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+          {categories.map((cat) => {
+            const count = cat === 'ALL' 
+              ? projects.length 
+              : projects.filter((p) => p.category === cat).length;
+            return (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-colors ${
+                  selectedCategory === cat
+                    ? 'bg-primary-600 text-white shadow-sm'
+                    : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
+                }`}
+              >
+                {cat} <span className="opacity-75 text-[10px]">({count})</span>
+              </button>
+            );
+          })}
         </div>
 
         {/* Search Input */}

@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Github, ExternalLink } from 'lucide-react';
-import { projectsData } from '../../data/projects';
+import { useDynamicProjects } from '../../hooks/useDynamicProjects';
 import { Card } from '../ui/Card';
 import { Badge } from '../ui/Badge';
 import { Button } from '../ui/Button';
 import { SectionHeader } from '../ui/SectionHeader';
 
 export const SelectedWork: React.FC = () => {
-  const selectedProjects = projectsData.filter((p) => p.featured).slice(1, 4);
+  const { projects } = useDynamicProjects();
+  const selectedProjects = projects.filter((p) => p.featured).slice(0, 3);
 
   return (
     <section className="py-16 md:py-24 border-b border-border-dark">
@@ -22,7 +23,7 @@ export const SelectedWork: React.FC = () => {
           />
           <Link to="/projects" className="mt-4 md:mt-0">
             <Button variant="outline" size="sm" icon={<ArrowRight className="w-4 h-4" />} iconPosition="right">
-              View All Projects ({projectsData.length})
+              View All Projects ({projects.length})
             </Button>
           </Link>
         </div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, Home, User, Code2, Award, GraduationCap, FileText, Mail, Terminal } from 'lucide-react';
-import { projectsData } from '../../data/projects';
+import { Search, FileText, Code2, Briefcase, GraduationCap, Award, Mail, Sparkles } from 'lucide-react';
+import { useDynamicProjects } from '../../hooks/useDynamicProjects';
 
 interface CommandPaletteProps {
   isOpen: boolean;
@@ -18,15 +18,15 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
 }) => {
   const [query, setQuery] = useState('');
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const navigate = useNavigate();
+  const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const { projects } = useDynamicProjects();
 
+  // Static navigation routes
   const staticNav = [
-    { label: 'Home', path: '/', icon: <Home className="w-4 h-4" /> },
-    { label: 'About Bhavya', path: '/about', icon: <User className="w-4 h-4" /> },
     { label: 'Projects & Case Studies', path: '/projects', icon: <Code2 className="w-4 h-4" /> },
-    { label: 'Technical Skills Matrix', path: '/skills', icon: <Terminal className="w-4 h-4" /> },
-    { label: 'Achievements', path: '/achievements', icon: <Award className="w-4 h-4" /> },
+    { label: 'Technical Skills Matrix', path: '/skills', icon: <Sparkles className="w-4 h-4" /> },
+    { label: 'About & Background', path: '/about', icon: <Briefcase className="w-4 h-4" /> },
     { label: 'Certifications', path: '/certifications', icon: <Award className="w-4 h-4" /> },
     { label: 'Education & Curriculum', path: '/education', icon: <GraduationCap className="w-4 h-4" /> },
     { label: 'Resume (View & Download)', path: '/resume', icon: <FileText className="w-4 h-4" /> },
@@ -37,7 +37,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
     item.label.toLowerCase().includes(query.toLowerCase())
   );
 
-  const filteredProjects = projectsData.filter((p) =>
+  const filteredProjects = projects.filter((p) =>
     p.title.toLowerCase().includes(query.toLowerCase()) ||
     p.tags.some((t) => t.toLowerCase().includes(query.toLowerCase())) ||
     p.category.toLowerCase().includes(query.toLowerCase())

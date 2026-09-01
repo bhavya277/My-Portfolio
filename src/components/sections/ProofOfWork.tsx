@@ -1,12 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CheckCircle2, ArrowRight, Github, Brain, Globe, Shield, Sparkles } from 'lucide-react';
+import { CheckCircle2, ArrowRight, Github, Brain, Globe, Sparkles } from 'lucide-react';
 import { Card } from '../ui/Card';
 import { Badge } from '../ui/Badge';
 import { SectionHeader } from '../ui/SectionHeader';
 
 export const ProofOfWork: React.FC = () => {
   const proofItems = [
+    {
+      domain: 'Predictive ML & Time-Series Ensembles',
+      icon: <Brain className="w-4 h-4 text-primary-400" />,
+      evidence: 'Multi-modal wearable telemetry processing with Polars, strict temporal leak firewall, and 5-fold stratified CatBoost + LightGBM weighted ensemble.',
+      projectTitle: 'Multimodal Athlete Injury Prediction System',
+      projectUrl: '/projects/ml-model-for-athletes',
+      githubUrl: 'https://github.com/bhavya277/ML-Model-for-Athletes',
+      deliverables: ['Polars 5-modality vectorized feature extraction (92 features)', 'CatBoost + LightGBM + RF weighted probability ensemble', '0.7624 OOF ROC-AUC & live Streamlit telemetry dashboard'],
+    },
     {
       domain: 'AI & Market Intelligence',
       icon: <Brain className="w-4 h-4 text-cyan-400" />,
@@ -33,15 +42,6 @@ export const ProofOfWork: React.FC = () => {
       projectUrl: '/projects/finops',
       githubUrl: 'https://github.com/bhavya277/FinOps',
       deliverables: ['Prophet time-series cloud cost projection', 'Isolation Forest multi-dimensional anomaly detection', 'Flask backend + React 19 dashboard'],
-    },
-    {
-      domain: 'Blockchain & Cryptography',
-      icon: <Shield className="w-4 h-4 text-emerald-400" />,
-      evidence: 'EVM smart contracts on Ethereum, OCR document authentication, and AES-256 cryptographic PII protection.',
-      projectTitle: 'SecureVote — Decentralized Voting System',
-      projectUrl: '/projects/secure-vote',
-      githubUrl: 'https://github.com/bhavya277/blockchain-based-Voting-System',
-      deliverables: ['Solidity voting contracts with Hardhat & OpenZeppelin', 'FastAPI OCR identity verification backend', 'Zero-gas voter interaction model'],
     },
   ];
 

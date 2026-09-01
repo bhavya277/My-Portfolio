@@ -2,6 +2,108 @@ import { ProjectCaseStudy } from '../types';
 
 export const projectsData: ProjectCaseStudy[] = [
   {
+    id: 'ml-model-for-athletes',
+    title: 'Multimodal Athlete Injury Prediction System',
+    tagline: 'Production-grade predictive modeling engine forecasting 30-day injury probability, onset day offset, and recovery duration using 5-modality wearable telemetry and multi-target weighted ensemble.',
+    category: 'AI/ML',
+    featured: true,
+    role: 'Machine Learning Engineer',
+    duration: 'PlayHack Competition Project',
+    teamSize: 'Individual Project',
+    githubUrl: 'https://github.com/bhavya277/ML-Model-for-Athletes',
+    liveUrl: 'https://athletes-ml-model.vercel.app',
+    tags: ['Python', 'Polars', 'CatBoost', 'LightGBM', 'Scikit-Learn', 'Feature Engineering', 'Time-Series', 'Ensemble Modeling', 'Streamlit'],
+
+    problem: 'Sports organizations and competitive leagues face millions in lost time and athlete career disruptions due to preventable non-contact injuries. Forecasting risk requires synthesizing high-frequency, multimodal telemetry (sleep, heart rate, workload, anthropometrics) across disparate sampling rates without future-data leakage.',
+    why: 'Early detection allows athletic performance teams to implement targeted rest days, micro-load adjustments, and proactive physiotherapy before acute tissue damage occurs.',
+    solution: 'Engineered a leak-free machine learning system processing 5 telemetry modalities via a high-performance Polars feature engine (74 raw / 92 engineered features) into a multi-target modeling ensemble (CatBoost 45% + LightGBM 35% + Random Forest 20%) evaluated under strict 5-fold sport-stratified cross-validation.',
+
+    architecture: {
+      summary: 'End-to-end multimodal machine learning pipeline incorporating strict temporal boundary filtering (Date <= 2026-02-03), vectorized feature extraction across 5 sensor feeds, fold-local imputation, and multi-target ensemble inference.',
+      components: [
+        {
+          name: 'Multi-Modal Ingestion & Temporal Firewall',
+          description: 'Ingests athlete metadata, daily activities, sleep records, training sessions, and hourly heart rate feeds while strictly enforcing historical horizon boundaries to prevent temporal data leakage.',
+          tech: 'Python, Polars, Strict Temporal Boundaries',
+        },
+        {
+          name: 'Vectorized Feature Engine (Polars)',
+          description: 'Calculates ACWR (Acute:Chronic Workload Ratios), session monotony, sleep deficit metrics, cardiac recovery proxies, and anthropometric risk factors across 74 raw and 92 encoded features.',
+          tech: 'Polars, NumPy, Vectorized Window Aggregations',
+        },
+        {
+          name: 'Stratified Validation Engine',
+          description: '5-Fold Sport + Target Stratified Cross-Validation ensuring zero fold-to-fold data leakage during median imputation, standard scaling, and one-hot encoding.',
+          tech: 'Scikit-Learn StratifiedKFold, Custom Preprocessing Pipeline',
+        },
+        {
+          name: 'Multi-Target Weighted Ensemble',
+          description: 'Specialized model architectures for each target: Binary Injury Risk (CatBoost + LightGBM + Random Forest), Onset Timing Regressor (RF + CatBoost bounded 1-30), and Recovery Regressor (Ridge + CatBoost bounded 5-20).',
+          tech: 'CatBoost, LightGBM, Random Forest, Ridge Regression',
+        },
+        {
+          name: 'Interactive Streamlit Dashboard',
+          description: 'Web dashboard allowing sports medicine staff and coaches to upload telemetry, inspect individual athlete risk radar scores, and simulate workload modifications.',
+          tech: 'Streamlit, Vercel, Plotly, Altair',
+        },
+      ],
+      dataFlow: [
+        '1. Ingest 5 telemetry CSV modalities across 30-day historical observation window.',
+        '2. Apply strict temporal firewall (filtering out all data after cutoff date).',
+        '3. Polars feature engine computes workload strain, sleep consistency, and elevated HR exposure.',
+        '4. Fold-local transformers impute missing sensor channels and apply robust scaling.',
+        '5. Multi-target ensemble computes calibrated injury probabilities and timing predictions.',
+        '6. Generates full submission predictions and interactive athlete risk dashboards.',
+      ],
+    },
+
+    myContribution: [
+      'Designed and coded the entire end-to-end Python & Polars feature engineering pipeline.',
+      'Constructed the strict temporal firewall preventing data leakage across observation windows.',
+      'Developed 5-fold sport and target stratified cross-validation framework with fold-local preprocessing.',
+      'Tuned hyperparameters and blending weights across CatBoost, LightGBM, and Random Forest models.',
+      'Built and deployed interactive telemetry prediction dashboard to Vercel.',
+    ],
+
+    technicalChallenges: [
+      {
+        challenge: 'Preventing temporal data leakage across multi-frequency sensor feeds with varying timestamps.',
+        resolution: 'Implemented strict firewall filtering prior to feature aggregation and isolated all preprocessor fits (imputers, scalers) strictly within CV training folds.',
+      },
+      {
+        challenge: 'Penalizing missed-injury false negatives according to PlayHack evaluation mechanics (60-day penalty per false negative).',
+        resolution: 'Optimized decision thresholds on predicted probabilities to balance F1-score maximization against severe timing penalties.',
+      },
+      {
+        challenge: 'Handling missing wearable heart rate and sleep logs without introducing synthetic distortion.',
+        resolution: 'Engineered missingness indicator flags and sport-stratified median imputation strategies.',
+      },
+    ],
+
+    engineeringDecisions: [
+      {
+        decision: 'Used Polars for high-throughput vectorized feature extraction.',
+        rationale: 'Delivered 8x speedup over standard Pandas operations when joining high-frequency hourly heart rate records across thousands of athlete sessions.',
+      },
+      {
+        decision: 'Selected Weighted Probability Ensemble (CatBoost + LightGBM + RF).',
+        rationale: 'CatBoost natively handles categorical sport positions, while LightGBM and Random Forest provide diverse tree splits that reduced out-of-fold variance.',
+      },
+    ],
+
+    results: [
+      'Achieved 0.7624 OOF ROC-AUC on binary injury risk prediction with 0.7627 +/- 0.0170 fold consistency.',
+      'Achieved 100% submission compliance across all 1,100 competition test rows with verified bounded outputs.',
+      'Successfully deployed live interactive dashboard on Vercel (https://athletes-ml-model.vercel.app).',
+    ],
+
+    learnings: [
+      'Deepened mastery of multi-modal time-series feature engineering and acute-to-chronic workload modeling.',
+      'Mastered competition-grade validation safeguards and temporal leak prevention.',
+      'Gained advanced practical experience blending tree-based gradient boosters for multi-target regression and classification.',
+    ],
+  },
+  {
     id: 'krishi-bazar',
     title: 'Krishi Bazaar — AI-Powered Agricultural Market Linkage Platform',
     tagline: 'Market intelligence platform providing real-time mandi prices, commodity price forecasting with IBM Granite LLM, and buyer-farmer direct linkage.',

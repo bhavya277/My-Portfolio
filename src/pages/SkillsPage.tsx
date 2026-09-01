@@ -1,15 +1,24 @@
-import React, { useState } from 'react';
-import { skillsData } from '../data/skills';
+import React, { useState, useEffect } from 'react';
+import { useDynamicSkills } from '../hooks/useDynamicSkills';
+import { useDynamicProjects } from '../hooks/useDynamicProjects';
 import { SkillLevel, SkillItem } from '../types';
 import { SectionHeader } from '../components/ui/SectionHeader';
 import { Card } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
-import { ArrowRight, Code2, Layers, Compass, Brain } from 'lucide-react';
+import { ArrowRight, Code2, Layers, Compass, Brain, Github, RefreshCw, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const SkillsPage: React.FC = () => {
+  const { skills, levelCounts, isLoading } = useDynamicSkills();
+  const { projects } = useDynamicProjects();
   const [selectedLevel, setSelectedLevel] = useState<'ALL' | SkillLevel>('ALL');
-  const [activeSkill, setActiveSkill] = useState<SkillItem | null>(skillsData[0]);
+  const [activeSkill, setActiveSkill] = useState<SkillItem | null>(null);
+
+  useEffect(() => {
+    if (!activeSkill && skills.length > 0) {
+      setActiveSkill(skills[0]);
+    }
+  }, [skills, activeSkill]);
 
   const levelConfigs: { level: SkillLevel; label: string; desc: string; icon: React.ReactNode }[] = [
     {
@@ -32,16 +41,39 @@ export const SkillsPage: React.FC = () => {
     },
   ];
 
+  const getProjectInfo = (projId: string) => {
+    const matched = projects.find((p) => p.id.toLowerCase() === projId.toLowerCase());
+    return {
+      title: matched ? matched.title.split('—')[0].trim() : projId.replace(/[-_]/g, ' '),
+      category: matched?.category || 'PROJ',
+      exists: !!matched,
+    };
+  };
+
   return (
     <div className="pt-28 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <SectionHeader
-        label="TAXONOMY & APPLICATION"
-        title="Technical Skills Matrix"
-        description="Structured by depth of practical mastery rather than arbitrary percentage bars. Click any skill to inspect specific topics and linked proof-of-work projects."
-      />
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-2">
+        <SectionHeader
+          label="TAXONOMY & APPLICATION"
+          title="Technical Skills Matrix"
+          description="Structured by depth of practical mastery rather than arbitrary percentage bars. Click any skill to inspect specific topics and linked proof-of-work projects."
+          className="mb-0"
+        />
+
+        {/* Live Sync Status */}
+        <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-300 self-start md:self-auto">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <Github className="w-3.5 h-3.5 text-slate-400" />
+          <span>Live Verified: {skills.length} Technical Skills</span>
+          {isLoading && <RefreshCw className="w-3 h-3 text-primary-400 animate-spin ml-1" />}
+        </div>
+      </div>
 
       {/* Tier Filter Tabs */}
-      <div className="flex flex-wrap gap-2 mb-8">
+      <div className="flex flex-wrap gap-2 mb-8 mt-6">
         <button
           onClick={() => setSelectedLevel('ALL')}
           className={`px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-colors ${
@@ -50,7 +82,7 @@ export const SkillsPage: React.FC = () => {
               : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
           }`}
         >
-          All Categories ({skillsData.length})
+          All Categories ({skills.length})
         </button>
         {levelConfigs.map((cfg) => (
           <button
@@ -64,6 +96,7 @@ export const SkillsPage: React.FC = () => {
           >
             {cfg.icon}
             <span>{cfg.label}</span>
+            <span className="opacity-75 text-[10px]">({levelCounts[cfg.level] || 0})</span>
           </button>
         ))}
       </div>
@@ -74,7 +107,7 @@ export const SkillsPage: React.FC = () => {
           {levelConfigs
             .filter((c) => selectedLevel === 'ALL' || selectedLevel === c.level)
             .map((group) => {
-              const skillsInGroup = skillsData.filter((s) => s.level === group.level);
+              const skillsInGroup = skills.filter((s) => s.level === group.level);
               if (skillsInGroup.length === 0) return null;
 
               return (
@@ -101,7 +134,14 @@ export const SkillsPage: React.FC = () => {
                         }`}
                       >
                         <div className="flex items-center justify-between mb-1">
-                          <h4 className="text-xs font-bold text-white">{skill.name}</h4>
+                          <h4 className="text-xs font-bold text-white flex items-center gap-1.5">
+                            <span>{skill.name}</span>
+                            {skill.proofOfWorkProjectIds && skill.proofOfWorkProjectIds.length > 0 && (
+                              <span className="text-[10px] px-1.5 py-0.2 rounded bg-emerald-950/80 border border-emerald-800/60 text-emerald-400 font-mono" title={`${skill.proofOfWorkProjectIds.length} Linked Proofs`}>
+                                {skill.proofOfWorkProjectIds.length} Proof{skill.proofOfWorkProjectIds.length > 1 ? 's' : ''}
+                              </span>
+                            )}
+                          </h4>
                           <span className="text-[10px] font-mono text-slate-400 uppercase">
                             {skill.category.split(' ')[0]}
                           </span>
@@ -123,10 +163,10 @@ export const SkillsPage: React.FC = () => {
             <Card variant="highlight" className="p-6 space-y-5">
               <div className="flex items-center justify-between pb-3 border-b border-border-dark">
                 <div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-primary-400">
-                    // Skill Deep-Dive
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-primary-400 flex items-center gap-1">
+                    <Sparkles className="w-3 h-3" /> Technical Competency
                   </span>
-                  <h3 className="text-lg font-bold text-white">{activeSkill.name}</h3>
+                  <h3 className="text-lg font-bold text-white mt-0.5">{activeSkill.name}</h3>
                 </div>
                 <Badge
                   variant={
@@ -161,28 +201,42 @@ export const SkillsPage: React.FC = () => {
 
               {/* Linked Proof of Work */}
               <div className="pt-3 border-t border-border-dark">
-                <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-400 mb-2">
-                  Evidence & Project Application
-                </h4>
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-400">
+                    Evidence & Project Application
+                  </h4>
+                  {activeSkill.proofOfWorkProjectIds && activeSkill.proofOfWorkProjectIds.length > 0 && (
+                    <span className="text-[10px] font-mono text-emerald-400">
+                      {activeSkill.proofOfWorkProjectIds.length} Verified Repositories
+                    </span>
+                  )}
+                </div>
+                
                 {activeSkill.proofOfWorkProjectIds && activeSkill.proofOfWorkProjectIds.length > 0 ? (
                   <div className="space-y-2">
-                    {activeSkill.proofOfWorkProjectIds.map((projId) => (
-                      <Link
-                        key={projId}
-                        to={`/projects/${projId}`}
-                        className="flex items-center justify-between p-3 rounded-lg bg-slate-900/90 border border-slate-800 hover:border-primary-500/50 hover:bg-slate-850 transition-colors text-xs"
-                      >
-                        <div className="flex items-center gap-2">
-                          <Code2 className="w-3.5 h-3.5 text-primary-400" />
-                          <span className="font-semibold text-slate-200 capitalize">
-                            {projId.replace(/-/g, ' ')}
+                    {activeSkill.proofOfWorkProjectIds.map((projId) => {
+                      const info = getProjectInfo(projId);
+                      return (
+                        <Link
+                          key={projId}
+                          to={`/projects/${projId}`}
+                          className="flex items-center justify-between p-3 rounded-lg bg-slate-900/90 border border-slate-800 hover:border-primary-500/50 hover:bg-slate-850 transition-colors text-xs group"
+                        >
+                          <div className="flex items-center gap-2 overflow-hidden">
+                            <Code2 className="w-3.5 h-3.5 text-primary-400 shrink-0" />
+                            <span className="font-semibold text-slate-200 truncate">
+                              {info.title}
+                            </span>
+                            <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 shrink-0 uppercase">
+                              {info.category}
+                            </span>
+                          </div>
+                          <span className="text-primary-400 flex items-center gap-1 font-mono text-[11px] shrink-0 ml-2 group-hover:translate-x-0.5 transition-transform">
+                            Case Study <ArrowRight className="w-3 h-3" />
                           </span>
-                        </div>
-                        <span className="text-primary-400 flex items-center gap-1 font-mono text-[11px]">
-                          Case Study <ArrowRight className="w-3 h-3" />
-                        </span>
-                      </Link>
-                    ))}
+                        </Link>
+                      );
+                    })}
                   </div>
                 ) : (
                   <p className="text-xs text-slate-400 italic">
@@ -201,3 +255,4 @@ export const SkillsPage: React.FC = () => {
     </div>
   );
 };
+

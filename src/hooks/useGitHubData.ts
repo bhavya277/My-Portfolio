@@ -25,6 +25,18 @@ export interface GitHubProfileStats {
 
 const FALLBACK_REPOS: GitHubRepo[] = [
   {
+    id: 1351632263,
+    name: 'ML-Model-for-Athletes',
+    description: 'Multimodal Athlete Injury Prediction System forecasting 30-day injury risk, onset timing, and recovery duration using 5-modality wearable telemetry and multi-target weighted ensemble.',
+    html_url: 'https://github.com/bhavya277/ML-Model-for-Athletes',
+    homepage: 'https://athletes-ml-model.vercel.app',
+    stargazers_count: 1,
+    forks_count: 0,
+    language: 'Python',
+    updated_at: '2026-09-01T08:15:00Z',
+    topics: ['machine-learning', 'python', 'polars', 'catboost', 'lightgbm', 'time-series', 'ensemble', 'predictive-modeling'],
+  },
+  {
     id: 1,
     name: 'Krishi-Bazar',
     description: 'AI-Powered Agricultural Market Linkage Platform with real-time APMC mandi price discovery and IBM watsonx.ai Granite LLM forecasting.',
@@ -118,9 +130,9 @@ const FALLBACK_REPOS: GitHubRepo[] = [
 ];
 
 const FALLBACK_LANGUAGES = [
-  { name: 'TypeScript', percentage: 48, color: '#3178C6' },
-  { name: 'Python', percentage: 26, color: '#3572A5' },
-  { name: 'JavaScript', percentage: 14, color: '#F7DF1E' },
+  { name: 'TypeScript', percentage: 42, color: '#3178C6' },
+  { name: 'Python', percentage: 34, color: '#3572A5' },
+  { name: 'JavaScript', percentage: 12, color: '#F7DF1E' },
   { name: 'PHP', percentage: 7, color: '#4F5D95' },
   { name: 'Solidity', percentage: 5, color: '#AA6746' },
 ];

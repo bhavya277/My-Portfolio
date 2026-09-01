@@ -15,7 +15,7 @@ export const profileData: ProfileData = {
     email: 'mailto:modibhavya128@gmail.com',
   },
   currently: {
-    building: 'AI/ML applications & full-stack platforms (GlobeTrotter)',
+    building: 'Predictive ML Systems (Athlete Injury Intelligence) & Full-Stack Platforms',
     learning: 'NLP → Transformer Architectures → Generative AI Pipelines',
     exploring: 'Cybersecurity fundamentals & intelligent system vulnerability mitigation',
     lookingFor: 'AI/ML, Data Science, and Software Engineering internships (Summer / Fall 2026)',
@@ -28,7 +28,7 @@ export const profileData: ProfileData = {
       'AI / Machine Learning Engineer Intern',
       'Software Development Engineer Intern (Full-Stack / Backend)',
     ],
-    topProjectIds: ['krishi-bazar', 'globetrotter', 'finops', 'secure-vote'],
-    coreSkills: ['TypeScript', 'Python', 'React', 'Node.js', 'FastAPI', 'SQL', 'Git & GitHub'],
+    topProjectIds: ['ml-model-for-athletes', 'krishi-bazar', 'globetrotter', 'finops'],
+    coreSkills: ['Python', 'Polars', 'CatBoost', 'TypeScript', 'React', 'FastAPI', 'SQL', 'Git & GitHub'],
   },
 };
